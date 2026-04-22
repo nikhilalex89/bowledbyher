@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Share Your IPL Team | Powered by Niroar Tech</title>
+
+
+    <link rel="icon" type="image/png" sizes="256x256" href="bbhfav.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="bbhfav.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="bbhfav.png">
+    <link rel="shortcut icon" href="bbhfav.png">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Share your custom IPL 2026 playing XI. Download as image or share on WhatsApp, Instagram, Twitter. Free cricket team tool.">
+    <meta name="keywords" content="share IPL team, download playing XI, cricket team image, IPL squad poster, dream team share, WhatsApp cricket share">
+    <meta name="author" content="Nikhil Alex | Niroar Tech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bowledbyher.online/bbh-submit.html">
+    <meta property="og:title" content="Share Your IPL Team | BowledByHer">
+    <meta property="og:description" content="Check out my IPL 2026 dream team! Built with BowledByHer.">
+    <meta property="og:image" content="https://bowledbyher.online/og-image.jpg">
+    <meta property="og:site_name" content="BowledByHer">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Share Your IPL Team | BowledByHer">
+    <meta name="twitter:description" content="My IPL 2026 playing XI. Built with BowledByHer.">
+    <meta name="twitter:image" content="https://bowledbyher.online/og-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bowledbyher.online/bbh-submit.html">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2canvas for image generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========== TEAM-SPECIFIC NEO-DARK GRADIENTS ========== */
+        body.csk {
+            --team-primary: #FFD700;
+            --team-secondary: #FFA500;
+            --team-accent: #FFB347;
+            --team-glow: rgba(255, 215, 0, 0.5);
+            --team-dark: #0a0a1a;
+            background: linear-gradient(135deg, #1a1500 0%, #2a2000 50%, #1a1500 100%);
+        }
+        body.csk::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 40%, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.05) 50%, transparent 80%);
+            pointer-events: none;
+            z-index: 0;
+            animation: cskGlow 4s ease-in-out infinite;
+        }
+        @keyframes cskGlow { 
+            0%,100% { opacity: 0.6; background-size: 100% 100%; } 
+            50% { opacity: 1; background-size: 120% 120%; } 
+        }
+
+        body.mi {
+            --team-primary: #0055A4;
+            --team-secondary: #FFD700;
+            --team-accent: #FFC107;
+            --team-glow: rgba(0, 85, 164, 0.5);
+            --team-dark: #0a121f;
+            background: linear-gradient(135deg, #050a12 0%, #0a121f 50%, #050a12 100%);
+        }
+        body.mi::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 70% 30%, rgba(255, 215, 0, 0.2) 0%, rgba(0, 85, 164, 0.15) 50%, transparent 80%);
+            pointer-events: none;
+            z-index: 0;
+            animation: miGlow 4s ease-in-out infinite;
+        }
+        @keyframes miGlow { 
+            0%,100% { opacity: 0.5; } 
+            50% { opacity: 0.9; } 
+        }
+
+        body.rcb {
+            --team-primary: #E31B23;
+            --team-secondary: #FF4D4D;
+            --team-accent: #FF6B6B;
+            --team-glow: rgba(227, 27, 35, 0.5);
+            --team-dark: #1a0a0a;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2a0f0f 50%, #3a0a0a 100%);
+        }
+        body.rcb::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 60% 50%, rgba(227, 27, 35, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: rcbFire 2s ease-in-out infinite;
+        }
+        @keyframes rcbFire { 
+            0%,100% { filter: brightness(1); } 
+            50% { filter: brightness(1.12); } 
+        }
+
+        body.kkr {
+            --team-primary: #8B5CF6;
+            --team-secondary: #FFD700;
+            --team-accent: #FF69B4;
+            --team-glow: rgba(139, 92, 246, 0.5);
+            --team-dark: #0f0a1a;
+            background: linear-gradient(135deg, #1a0f2e 0%, #2a1a4a 50%, #1a0f2e 100%);
+        }
+        body.kkr::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 40% 60%, rgba(255, 215, 0, 0.2) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: kkrPulse 3s ease-in-out infinite;
+        }
+        @keyframes kkrPulse { 
+            0%,100% { opacity: 0.5; } 
+            50% { opacity: 0.9; } 
+        }
+
+        body.srh {
+            --team-primary: #FF7F00;
+            --team-secondary: #FF9933;
+            --team-accent: #FFB347;
+            --team-glow: rgba(255, 127, 0, 0.5);
+            --team-dark: #1a0f0a;
+            background: linear-gradient(135deg, #1a0f0a 0%, #2a1a0f 50%, #3a1f0a 100%);
+        }
+        body.srh::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 127, 0, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: srhGlow 4s ease-in-out infinite;
+        }
+        @keyframes srhGlow { 
+            0%,100% { filter: brightness(1); } 
+            50% { filter: brightness(1.1); } 
+        }
+
+        body.dc {
+            --team-primary: #004C97;
+            --team-secondary: #E31B23;
+            --team-accent: #FF4D4D;
+            --team-glow: rgba(0, 76, 151, 0.5);
+            --team-dark: #0a121f;
+            background: linear-gradient(135deg, #0a121f 0%, #0f1a2a 50%, #1a1f2a 100%);
+        }
+        body.dc::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 55% 45%, rgba(227, 27, 35, 0.15) 0%, rgba(0, 76, 151, 0.15) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body.rr {
+            --team-primary: #FF69B4;
+            --team-secondary: #FF85C1;
+            --team-accent: #FF9FBF;
+            --team-glow: rgba(255, 105, 180, 0.5);
+            --team-dark: #1a0f1a;
+            background: linear-gradient(135deg, #1a0f1a 0%, #2a152a 50%, #3a1a3a 100%);
+        }
+        body.rr::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 65% 35%, rgba(255, 105, 180, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body.pbks {
+            --team-primary: #E31B23;
+            --team-secondary: #C0C0C0;
+            --team-accent: #FF4D4D;
+            --team-glow: rgba(227, 27, 35, 0.5);
+            --team-dark: #1a0a0a;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2a1515 50%, #3a1a1a 100%);
+        }
+        body.pbks::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 45% 55%, rgba(192, 192, 192, 0.15) 0%, rgba(227, 27, 35, 0.15) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body.lsg {
+            --team-primary: #FF6B00;
+            --team-secondary: #003B6F;
+            --team-accent: #FF8C42;
+            --team-glow: rgba(255, 107, 0, 0.5);
+            --team-dark: #0a121f;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0f1f3a 100%);
+        }
+        body.lsg::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 35% 65%, rgba(255, 107, 0, 0.2) 0%, rgba(0, 59, 111, 0.15) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: lsgGlow 3s ease-in-out infinite;
+        }
+        @keyframes lsgGlow { 
+            0%,100% { opacity: 0.6; } 
+            50% { opacity: 0.9; } 
+        }
+
+        body.gt {
+            --team-primary: #00AEEF;
+            --team-secondary: #1C1C1C;
+            --team-accent: #FFD700;
+            --team-glow: rgba(0, 174, 239, 0.5);
+            --team-dark: #0a101a;
+            background: linear-gradient(135deg, #0a1628 0%, #0d1f3a 50%, #0a1628 100%);
+        }
+        body.gt::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 75% 25%, rgba(0, 174, 239, 0.2) 0%, rgba(28, 28, 28, 0.1) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .neo-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .neo-particle { position: absolute; width: 3px; height: 3px; background: radial-gradient(circle, var(--team-primary), transparent); border-radius: 50%; animation: floatNeo 12s infinite linear; opacity: 0; }
+        @keyframes floatNeo { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 15% { opacity: 0.4; } 85% { opacity: 0.3; } 100% { transform: translateY(-100vh) translateX(50px); opacity: 0; } }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 20px; position: relative; z-index: 10; }
+
+        .neo-header {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 60px;
+            padding: 15px 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo-neo { display: flex; align-items: center; gap: 20px; }
+        .main-logo { width: 70px; height: 70px; object-fit: contain; }
+        .logo-3d {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: logoNeoPulse 2s ease-in-out infinite;
+        }
+        @keyframes logoNeoPulse { 0%,100% { box-shadow: 0 0 0 0 var(--team-glow); transform: scale(1); } 50% { box-shadow: 0 0 0 15px rgba(0,0,0,0); transform: scale(1.05); } }
+        .brand-neo h1 { font-size: 1.8rem; font-weight: 800; font-family: 'Orbitron',  monospace; color: white; letter-spacing: 3px; }
+        .brand-neo p { font-size: 0.7rem; color: rgba(255,255,255,0.8); letter-spacing: 3px; }
+
+        /* MY IDEAL TEAM text color - matches team color */
+        .ideal-team-tag {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--team-primary) !important;
+        }
+
+        .team-info-card { background: rgba(0,0,0,0.45); backdrop-filter: blur(20px); border-radius: 35px; padding: 20px 30px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .team-badge { display: flex; align-items: center; gap: 20px; }
+        .team-logo-large { width: 70px; height: 70px; background: linear-gradient(135deg, var(--team-primary), var(--team-secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .team-logo-large img { width: 55px; height: 55px; object-fit: contain; }
+        .team-name-large h2 { font-size: 1.5rem; font-family: 'Orbitron', monospace; color: white; }
+        .team-name-large p { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+        .team-stats { display: flex; gap: 20px; }
+        .stat-badge { text-align: center; padding: 8px 18px; background: rgba(255,255,255,0.1); border-radius: 25px; border-left: 3px solid var(--team-primary); }
+        .stat-badge .stat-number { font-size: 1.5rem; font-weight: 800; font-family: 'Orbitron', monospace; color: var(--team-primary); }
+        .stat-badge .stat-label { font-size: 0.65rem; color: rgba(255,255,255,0.7); }
+
+        .view-toggle { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
+        .view-btn { padding: 10px 25px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: 'Orbitron', monospace; font-size: 0.85rem; }
+        .view-btn.active { background: linear-gradient(135deg, var(--team-primary), var(--team-secondary)); border-color: transparent; box-shadow: 0 0 20px var(--team-glow); color: #000; }
+        .view-btn:hover:not(.active) { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+        .playing-xi-grid { display: none; }
+        .playing-xi-grid.active { display: block; }
+        
+        .grid-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        .grid-row.top-row .player-card-submit { width: calc(16.66% - 18px); min-width: 150px; }
+        .grid-row.bottom-row { justify-content: center; }
+        .grid-row.bottom-row .player-card-submit { width: calc(20% - 18px); min-width: 160px; }
+
+        .player-card-submit {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 15px 12px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+        .player-card-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--team-primary), var(--team-secondary));
+        }
+        .player-card-submit:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); }
+        
+        .batting-order {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            color: #000;
+            font-weight: 800;
+            font-size: 0.7rem;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            box-shadow: 0 0 10px var(--team-glow);
+            z-index: 2;
+        }
+        
+        .player-img-submit {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--team-primary);
+            margin-bottom: 10px;
+        }
+        .player-name-submit { font-weight: 700; font-size: 0.85rem; color: white; margin-top: 5px; }
+        .player-role-submit { font-size: 0.65rem; color: rgba(255,255,255,0.6); margin: 4px 0; }
+        .player-badges { display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+        .mini-badge { padding: 2px 8px; border-radius: 20px; font-size: 0.6rem; font-weight: 600; }
+        .badge-captain { background: rgba(46,204,113,0.2); color: #2ecc71; border: 1px solid #2ecc71; }
+        .badge-vc { background: rgba(52,152,219,0.2); color: #3498db; border: 1px solid #3498db; }
+        .badge-wk { background: rgba(155,89,182,0.2); color: #9b59b6; border: 1px solid #9b59b6; }
+        .badge-impact { background: rgba(241,196,15,0.2); color: #f1c40f; border: 1px solid #f1c40f; }
+
+        .vertical-view { 
+            display: none; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 10px;
+        }
+        .vertical-view.active { display: block; }
+        #verticalPlayersList { display: flex; flex-direction: column; gap: 8px; }
+        
+        .vertical-player-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .vertical-player-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 3px;
+            height: 70%;
+            border-radius: 3px;
+            background: var(--team-primary);
+            opacity: 0.9;
+        }
+        .vertical-player-card:hover { background: rgba(255, 255, 255, 0.08); }
+        .vertical-order {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #000;
+            font-family: 'Orbitron', monospace;
+        }
+        .vertical-player-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--team-primary); }
+        .vertical-player-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .vertical-player-name { font-weight: 600; font-size: 0.9rem; color: white; }
+        .vertical-player-role { font-size: 0.7rem; color: rgba(255,255,255,0.6); }
+        .vertical-badges { display: flex; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
+        .v-badge { padding: 2px 8px; border-radius: 20px; font-size: 0.6rem; font-weight: 600; }
+
+        .impact-section { 
+            margin: 20px 0; 
+            padding: 15px 20px; 
+            background: rgba(0,0,0,0.3); 
+            border-radius: 25px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+        }
+        .impact-title { 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            margin-bottom: 12px; 
+            color: var(--team-primary); 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .impact-player-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--team-primary);
+            box-shadow: 0 0 10px var(--team-glow);
+            color: white;
+        }
+
+        .action-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+        .action-btn { padding: 12px 28px; border-radius: 50px; border: none; font-weight: 700; font-family: 'Orbitron', monospace; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 10px; font-size: 0.85rem; text-decoration: none; color: inherit; }
+        .action-btn-primary { background: linear-gradient(135deg, var(--team-primary), var(--team-secondary)); color: #000; }
+        .action-btn-secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+        .action-btn:hover { transform: translateY(-3px); filter: brightness(1.05); box-shadow: 0 0 25px var(--team-glow); }
+
+        .share-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; }
+        .share-modal-content { background: rgba(0,0,0,0.95); border-radius: 30px; padding: 25px; max-width: 90%; max-height: 90%; overflow: auto; text-align: center; border: 1px solid var(--team-primary); }
+        .share-preview-img { max-width: 100%; border-radius: 20px; margin-bottom: 20px; max-height: 70vh; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
+        .share-platform-btn { padding: 10px 20px; border-radius: 50px; border: none; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+        .close-modal { background: rgba(255,255,255,0.2); color: white; }
+        
+        .story-container { display: none; position: fixed; top: 0; left: 0; width: 1080px; height: 1920px; background: linear-gradient(135deg, #0a0a1a, #1a1a2a); z-index: 1000; overflow: hidden; padding: 40px; flex-direction: column; justify-content: space-between; }
+        .story-watermark { position: absolute; bottom: 35px; right: 35px; opacity: 0.8; font-size: 16px; font-family: 'Orbitron', monospace; color: white; background: rgba(0,0,0,0.6); padding: 6px 20px; border-radius: 40px; backdrop-filter: blur(4px); letter-spacing: 1px; }
+        .story-watermark-left { position: absolute; bottom: 35px; left: 35px; opacity: 0.8; font-size: 14px; font-family: 'Poppins', sans-serif; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.5); padding: 6px 18px; border-radius: 40px; display: flex; align-items: center; gap: 8px; }
+        .story-watermark-left img { width: 28px; height: 28px; object-fit: contain; border-radius: 50%; }
+        .story-header { text-align: center; margin-bottom: 25px; }
+        .story-logo { width: 85px; height: 85px; background: linear-gradient(135deg, var(--team-primary), var(--team-secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+        .story-logo img { width: 65px; height: 65px; object-fit: contain; border-radius: 50%; }
+        .story-title { font-size: 42px; font-weight: 800; font-family: 'Bebas Neue', cursive; color: white; letter-spacing: 3px; }
+        .story-subtitle { font-size: 22px; color: var(--team-primary); margin-top: 8px; }
+        .story-team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 25px 0; overflow-y: auto; max-height: 65%; padding: 8px; }
+        .story-player-card { text-align: center; background: rgba(255,255,255,0.1); border-radius: 22px; padding: 15px; backdrop-filter: blur(10px); }
+        .story-player-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 2px solid var(--team-primary); margin-bottom: 10px; }
+        .story-player-name { font-size: 16px; font-weight: 700; color: white; }
+        .close-story { position: absolute; top: 15px; right: 15px; width: 45px; height: 45px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1001; }
+        
+        .toast-neo { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); padding: 10px 24px; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-radius: 60px; color: white; z-index: 1000; transition: all 0.3s; border-left: 4px solid var(--team-primary); }
+        .toast-neo.show { transform: translateX(-50%) translateY(0); }
+
+        .simple-disclaimer { margin: 30px 0 20px; padding: 15px 20px; background: rgba(0,0,0,0.3); border-radius: 16px; border-left: 3px solid var(--team-primary); }
+        
+        .story-capture-mode .neo-header { padding: 12px 20px !important; margin-bottom: 15px !important; }
+        .story-capture-mode .team-info-card { padding: 12px 20px !important; margin-bottom: 15px !important; }
+        .story-capture-mode .player-card-submit { padding: 10px 8px !important; }
+        .story-capture-mode .player-img-submit { width: 65px !important; height: 65px !important; }
+        .story-capture-mode .player-name-submit { font-size: 0.75rem !important; }
+        .story-capture-mode .player-role-submit { font-size: 0.6rem !important; }
+        .story-capture-mode .impact-section { margin: 12px 0 !important; padding: 10px 15px !important; }
+        .story-capture-mode .action-buttons { display: none !important; }
+
+        /* 2x2x2x2x2x1 grid ONLY in downloaded image */
+        .story-capture-mode .grid-row {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 12px !important;
+        }
+
+        .story-capture-mode .grid-row.top-row,
+        .story-capture-mode .grid-row.bottom-row {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        .story-capture-mode .player-card-submit {
+            width: 100% !important;
+            min-width: auto !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 1100px) {
+            .grid-row.top-row .player-card-submit { width: calc(33.33% - 18px); min-width: 140px; }
+            .grid-row.bottom-row .player-card-submit { width: calc(33.33% - 18px); }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .neo-header { flex-direction: column; text-align: center; padding: 15px; }
+            .team-info-card { flex-direction: column; text-align: center; padding: 18px; }
+            .team-stats { justify-content: center; }
+            .grid-row.top-row .player-card-submit { width: calc(50% - 15px); }
+            .grid-row.bottom-row .player-card-submit { width: calc(50% - 15px); }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .action-btn { width: 80%; justify-content: center; }
+            .vertical-view { max-height: 55vh; }
+        }
+
+        .niroar-footer-zone {
+            position: relative;
+            background: #000;
+            padding: 120px 40px 70px;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .niroar-light-orb {
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+        }
+        .niroar-depth-layer {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 60%);
+            transform: perspective(900px) rotateX(55deg);
+            opacity: 0;
+            transition: 0.6s ease;
+        }
+        .niroar-content-core {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+        .niroar-powered-line {
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 6px;
+            font-size: 0.7rem;
+            margin-bottom: 45px;
+        }
+        .niroar-logo-frame {
+            position: relative;
+            width: 260px;
+            margin: auto;
+        }
+        .niroar-emblem {
+            width: 100%;
+            transition: 0.4s ease;
+            filter: grayscale(100%) brightness(0.55) drop-shadow(0 0 8px rgba(255,255,255,0.1));
+        }
+        .niroar-logo-frame:hover .niroar-emblem {
+            transform: scale(1.08);
+            filter: grayscale(0%) brightness(1.3) drop-shadow(0 0 30px rgba(255,255,255,0.9));
+        }
+        .niroar-tagline-text {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.75);
+            transition: 0.3s;
+        }
+        .niroar-marquee-wrap {
+            margin-top: 60px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .niroar-track-line {
+            display: inline-block;
+            animation: niroar-scroll-flow 22s linear infinite;
+        }
+        .niroar-scroll-item {
+            padding: 0 60px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.9);
+        }
+        @keyframes niroar-scroll-flow {
+            100% { transform: translateX(-50%); }
+        }
+        .niroar-divider-line {
+            margin: 75px auto 35px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent);
+        }
+        .niroar-copy-note {
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
+
+        /* Add these CSS styles for curvy square player cards in capture mode */
+.story-capture-mode .player-card-submit {
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 18px 12px !important;
+}
+
+.story-capture-mode .player-img-submit {
+    width: 85px !important;
+    height: 85px !important;
+    border-radius: 18px !important;
+    border: 2px solid var(--team-primary) !important;
+    margin-bottom: 12px !important;
+}
+
+.story-capture-mode .player-name-submit {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+
+.story-capture-mode .player-role-submit {
+    font-size: 0.75rem !important;
+}
+
+.story-capture-mode .batting-order {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.85rem !important;
+    top: 10px !important;
+    left: 14px !important;
+}
+
+.story-capture-mode .mini-badge {
+    padding: 3px 10px !important;
+    font-size: 0.7rem !important;
+}
+
+.story-capture-mode .team-info-card {
+    padding: 25px 30px !important;
+}
+
+.story-capture-mode .team-logo-large {
+    width: 85px !important;
+    height: 85px !important;
+}
+
+.story-capture-mode .team-logo-large img {
+    width: 65px !important;
+    height: 65px !important;
+}
+
+.story-capture-mode .team-name-large h2 {
+    font-size: 1.8rem !important;
+}
+
+.story-capture-mode .stat-badge .stat-number {
+    font-size: 1.8rem !important;
+}
+
+.story-capture-mode .neo-header {
+    padding: 18px 30px !important;
+}
+
+.story-capture-mode .brand-neo h1 {
+    font-size: 2rem !important;
+}
+
+/* Add this to your existing CSS */
+.container {
+    transition: background 0.3s ease;
+}
+
+#captureContainer {
+    background: transparent;
+}
+
+.story-capture-mode {
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure the container captures the gradient */
+body.csk #captureContainer,
+body.mi #captureContainer,
+body.rcb #captureContainer,
+body.kkr #captureContainer,
+body.srh #captureContainer,
+body.dc #captureContainer,
+body.rr #captureContainer,
+body.pbks #captureContainer,
+body.lsg #captureContainer,
+body.gt #captureContainer {
+    background: transparent;
+}
+
+.story-capture-mode .player-card-submit {
+    border-radius: 24px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(12px) !important;
+    padding: 18px 12px !important;
+}
+.story-capture-mode .player-img-submit {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 18px !important;
+    border: 2px solid var(--team-primary) !important;
+    margin-bottom: 12px !important;
+}
+.story-capture-mode .player-name-submit {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+.story-capture-mode .player-role-submit {
+    font-size: 0.75rem !important;
+}
+.story-capture-mode .batting-order {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.85rem !important;
+    top: 10px !important;
+    left: 14px !important;
+}
+.story-capture-mode .mini-badge {
+    padding: 3px 10px !important;
+    font-size: 0.7rem !important;
+}
+.story-capture-mode .grid-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+}
+.story-capture-mode .grid-row.top-row,
+.story-capture-mode .grid-row.bottom-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+.story-capture-mode .player-card-submit {
+    width: 100% !important;
+    min-width: auto !important;
+    margin: 0 !important;
+}
+
+/* team-themed close button */
+.close-modal {
+    background: var(--team-primary) !important;
+    color: #000 !important;
+    transition: all 0.25s ease !important;
+    border: none !important;
+    box-shadow: 0 0 5px var(--team-glow) !important;
+}
+.close-modal:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 0 18px var(--team-primary) !important;
+    filter: brightness(1.1) !important;
+}
+
+/* ========== ADD THIS CODE TO YOUR STYLE SECTION ========== */
+/* Make all share buttons have same hover effect as close button */
+
+.share-platform-btn {
+    transition: all 0.25s ease !important;
+    cursor: pointer !important;
+}
+
+.share-platform-btn:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    filter: brightness(1.1) !important;
+}
+
+/* Save Image button hover */
+#downloadShareBtn:hover {
+    background: #27ae60 !important;
+    box-shadow: 0 0 15px #2ecc71 !important;
+}
+
+/* Share Anywhere button hover */
+#nativeShareBtn:hover {
+    background: #45a049 !important;
+    box-shadow: 0 0 15px #4CAF50 !important;
+}
+
+/* Close button hover (already exists, but adding for consistency) */
+.close-modal:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: 0 0 18px var(--team-primary) !important;
+    filter: brightness(1.1) !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--team-primary);
+    border-radius: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="neo-particles" id="neoParticles"></div>
+    
+    <div class="container" id="captureContainer">
+        <div class="neo-header">
+            <div class="logo-neo">
+                <div class="logo-3d">
+                    <img src="bbhlogo.png" alt="BowledByHer Logo" class="main-logo">
+                </div>
+                <div class="brand-neo">
+                    <h1>BOWLEDBYHER</h1>
+                    <p>IPL 2026 • NEO DARK ARENA</p>
+                </div>
+            </div>
+            <div class="ideal-team-tag" id="idealTeamTag">
+                MY PERFECT XI
+            </div>
+        </div>
+
+        <div class="team-info-card" id="teamInfoCard">
+            <div class="team-badge">
+                <div class="team-logo-large">
+                    <img id="teamLogoImg" src="" alt="Team Logo" onerror="this.src='https://via.placeholder.com/55'">
+                </div>
+                <div class="team-name-large">
+                    <h2 id="teamNameDisplay">Chennai Super Kings</h2>
+                    <p id="teamShortDisplay">CSK • IPL 2026</p>
+                </div>
+            </div>
+            <div class="team-stats">
+                <div class="stat-badge"><div class="stat-number" id="totalPlayers">0</div><div class="stat-label">PLAYERS</div></div>
+                <div class="stat-badge"><div class="stat-number" id="foreignCount">0</div><div class="stat-label">FOREIGN</div></div>
+                <div class="stat-badge"><div class="stat-number" id="indianCount">0</div><div class="stat-label">INDIAN</div></div>
+            </div>
+        </div>
+
+        <div class="view-toggle">
+            <button class="view-btn active" id="gridViewBtn"><i class="fas fa-th"></i> Grid View</button>
+            <button class="view-btn" id="verticalViewBtn"><i class="fas fa-list"></i> Vertical View</button>
+        </div>
+
+        <div id="gridView" class="playing-xi-grid active">
+            <div class="grid-row top-row" id="topRowGrid"></div>
+            <div class="grid-row bottom-row" id="bottomRowGrid"></div>
+        </div>
+
+        <div id="verticalView" class="vertical-view">
+            <div id="verticalPlayersList"></div>
+        </div>
+
+        <div class="impact-section">
+            <div class="impact-title"><i class="fas fa-bolt"></i> IMPACT PLAYERS</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;" id="impactPlayersList"></div>
+        </div>
+
+        <div class="simple-disclaimer">
+            <p style="font-size: 0.7rem; color: rgba(255,255,255,0.6); line-height: 1.5; margin: 0;">
+                <i class="fas fa-heart" style="color: var(--team-primary); margin-right: 8px;"></i>
+                An independent, fan-driven platform — not affiliated with the BCCI, ICC, or any IPL franchise. Built purely on a passion for cricket - create and share your ideal team for free.
+            </p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn action-btn-primary" id="downloadBtn"><i class="fas fa-download"></i> Download Team</button>
+            <button class="action-btn action-btn-primary" id="shareBtn"><i class="fas fa-share-alt"></i> Share Team</button>
+            <a href="index.html" class="action-btn action-btn-secondary">
+                <i class="fas fa-arrow-left"></i> Build Another Team
+            </a>
+        </div>
+    </div>
+
+    <div class="share-modal" id="shareModal">
+        <div class="share-modal-content">
+            <img id="sharePreviewImg" class="share-preview-img" alt="Team Preview">
+            <div class="share-buttons">
+                <button class="share-platform-btn" id="downloadShareBtn" style="background: #2ecc71; color: white;"><i class="fas fa-download"></i> Save Image</button>
+<button class="share-platform-btn" id="nativeShareBtn" style="background: #4CAF50; color: white;"><i class="fas fa-share-alt"></i> Share Anywhere</button>
+                <button class="share-platform-btn close-modal" id="closeModalBtn"><i class="fas fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-container" id="storyContainer">
+        <div class="close-story" id="closeStory"><i class="fas fa-times"></i></div>
+        <div class="story-header">
+            <div class="story-logo"><img src="bbhlogo.png" alt="logo" onerror="this.src='https://via.placeholder.com/65'"></div>
+            <div class="story-title" id="storyTeamName">BOWLEDBYHER</div>
+            <div class="story-subtitle" id="storySubtitle">IPL 2026 • DREAM TEAM</div>
+        </div>
+        <div class="story-team-grid" id="storyPlayersGrid"></div>
+        <div class="story-watermark-left"><img src="bbhlogo.png" alt="logo" style="width:24px;height:24px;border-radius:50%;"> bowledbyher.online</div>
+        <div class="story-watermark">#BowledByHer</div>
+    </div>
+
+    <div class="toast-neo" id="toast"></div>
+
+    <footer class="niroar-footer-zone" id="niroarFooter">
+        <div class="niroar-light-orb" id="niroarCursor"></div>
+        <div class="niroar-depth-layer"></div>
+        <div class="niroar-content-core">
+            <div class="niroar-powered-line">POWERED BY</div>
+            <a href="niroarabout.html" style="text-decoration: none; display: block; width: fit-content; margin: 0 auto;">
+                <div class="niroar-logo-frame">
+                    <img src="Niroarlogo.png" class="niroar-emblem">
+                </div>
+            </a>
+            <div class="niroar-tagline-text">— Roar Into Action —</div>
+            <div class="niroar-marquee-wrap">
+                <div class="niroar-track-line">
+                    <span class="niroar-scroll-item">- Architecting the systems that define what comes next -</span>
+                    <span class="niroar-scroll-item">- Transforming complex ideas into scalable intelligent systems -</span>
+                    <span class="niroar-scroll-item">- Engineering solutions that push beyond conventional limits -</span>
+                    <span class="niroar-scroll-item">- Establishing new standards through precision and innovation -</span>
+                </div>
+            </div>
+        </div>
+        <div class="niroar-divider-line"></div>
+        <div class="niroar-copy-note">
+            © 2026 BOWLEDBYHER™ • ALL RIGHTS RESERVED •
+        </div>
+    </footer>
+
+    <script>
+        const teamsData = {
+            csk:{name:"Chennai Super Kings",short:"CSK",logo:"csk.png",colors:{primary:"#FFD700",secondary:"#FF8C00"}},
+            mi:{name:"Mumbai Indians",short:"MI",logo:"mi.png"},
+            rcb:{name:"Royal Challengers Bangalore",short:"RCB",logo:"rcb.png"},
+            kkr:{name:"Kolkata Knight Riders",short:"KKR",logo:"kkr.png"},
+            srh:{name:"Sunrisers Hyderabad",short:"SRH",logo:"srh.png"},
+            dc:{name:"Delhi Capitals",short:"DC",logo:"dc.png"},
+            rr:{name:"Rajasthan Royals",short:"RR",logo:"rr.png"},
+            pbks:{name:"Punjab Kings",short:"PBKS",logo:"pbks.png"},
+            lsg:{name:"Lucknow Super Giants",short:"LSG",logo:"lsg.png"},
+            gt:{name:"Gujarat Titans",short:"GT",logo:"gt.png"}
+        };
+
+        let currentImageData = null;
+        let teamName = '';
+
+        function showToast(msg, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.style.borderLeftColor = isError ? '#e74c3c' : 'var(--team-primary)';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function createParticles() {
+            const container = document.getElementById('neoParticles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'neo-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = Math.random() * 12 + 8 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+       // Replace the entire captureGridView function
+async function captureGridView() {
+    const element = document.getElementById('captureContainer');
+    const toggle = document.querySelector('.view-toggle');
+    const buttons = document.querySelector('.action-buttons');
+    const footer = document.querySelector('.niroar-footer-zone');
+    const disclaimer = document.querySelector('.simple-disclaimer');
+    
+    // Hide UI elements for clean capture
+    if (toggle) toggle.style.display = 'none';
+    if (buttons) buttons.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    if (disclaimer) disclaimer.style.display = 'block';
+    
+    const container = document.querySelector('.container');
+    container.classList.add('story-capture-mode');
+    
+    // ✅ FORCE DESKTOP LAYOUT FOR CAPTURE
+    const originalViewport = document.querySelector('meta[name="viewport"]');
+    if (originalViewport) {
+        originalViewport.setAttribute('content', 'width=1200, initial-scale=1.0');
+    }
+    
+    // Get current team's background
+    const teamShort = document.body.className.toUpperCase();
+    let bgGradient = '';
+    switch(teamShort) {
+        case 'CSK': bgGradient = 'linear-gradient(135deg, #1a1500 0%, #2a2000 50%, #1a1500 100%)'; break;
+        case 'MI': bgGradient = 'linear-gradient(135deg, #050a12 0%, #0a121f 50%, #050a12 100%)'; break;
+        case 'RCB': bgGradient = 'linear-gradient(135deg, #1a0a0a 0%, #2a0f0f 50%, #3a0a0a 100%)'; break;
+        case 'KKR': bgGradient = 'linear-gradient(135deg, #1a0f2e 0%, #2a1a4a 50%, #1a0f2e 100%)'; break;
+        case 'SRH': bgGradient = 'linear-gradient(135deg, #1a0f0a 0%, #2a1a0f 50%, #3a1f0a 100%)'; break;
+        case 'DC': bgGradient = 'linear-gradient(135deg, #0a121f 0%, #0f1a2a 50%, #1a1f2a 100%)'; break;
+        case 'RR': bgGradient = 'linear-gradient(135deg, #1a0f1a 0%, #2a152a 50%, #3a1a3a 100%)'; break;
+        case 'PBKS': bgGradient = 'linear-gradient(135deg, #1a0a0a 0%, #2a1515 50%, #3a1a1a 100%)'; break;
+        case 'LSG': bgGradient = 'linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0f1f3a 100%)'; break;
+        case 'GT': bgGradient = 'linear-gradient(135deg, #0a1628 0%, #0d1f3a 50%, #0a1628 100%)'; break;
+        default: bgGradient = 'linear-gradient(135deg, #1a1500 0%, #2a2000 50%, #1a1500 100%)';
+    }
+    element.style.background = bgGradient;
+    
+    // ✅ Set fixed width to force desktop layout
+    element.style.width = '1200px';
+    element.style.margin = '0 auto';
+    
+    try {
+        const canvas = await html2canvas(element, { 
+            scale: 2,
+            useCORS: true,
+            allowTaint: false,
+            backgroundColor: null,
+            logging: false,
+            width: 1200,
+            windowWidth: 1200
+        });
+        return canvas;
+    } catch (err) {
+        console.error('Capture error:', err);
+        throw err;
+    } finally {
+        // Restore original settings
+        if (toggle) toggle.style.display = 'flex';
+        if (buttons) buttons.style.display = 'flex';
+        if (footer) footer.style.display = 'block';
+        if (disclaimer) disclaimer.style.display = 'block';
+        container.classList.remove('story-capture-mode');
+        element.style.background = '';
+        element.style.width = '';
+        element.style.margin = '';
+        if (originalViewport) {
+            originalViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, user-scalable=yes');
+        }
+    }
+}
+        document.addEventListener("DOMContentLoaded", async () => {
+            createParticles();
+            
+            let teamData = JSON.parse(localStorage.getItem("bowledbyher_submit"));
+            if (!teamData || !teamData.team) {
+                const backup = localStorage.getItem("bowledbyher_data");
+                if (backup) {
+                    try {
+                        const old = JSON.parse(backup);
+                        if (old.team && teamsData[old.team]) {
+                            const mappedXI = (old.playingXI || []).filter(x => x && x.player).map(x => x.player);
+                            teamData = { 
+                                team: teamsData[old.team], 
+                                playingXI: mappedXI.length === 11 ? mappedXI : [],
+                                impactPlayers: old.impactPlayers || [], 
+                                captain: old.captain, 
+                                viceCaptain: old.viceCaptain 
+                            };
+                        }
+                    } catch(e) {}
+                }
+                if (!teamData || !teamData.team || !teamData.playingXI.length) { 
+                    showToast("No team data found! Redirecting...", true); 
+                    setTimeout(() => window.location.href = "index.html", 1500); 
+                    return; 
+                }
+            }
+
+            const team = teamData.team;
+            teamName = team.name;
+            const playingXI = teamData.playingXI || [];
+            const impactPlayers = teamData.impactPlayers || [];
+            const captain = teamData.captain;
+            const viceCaptain = teamData.viceCaptain;
+
+            document.body.className = (team.short?.toLowerCase() || 'csk');
+            document.getElementById('teamNameDisplay').textContent = team.name;
+            document.getElementById('teamShortDisplay').textContent = `${team.short} • IPL 2026`;
+            if (team.logo) document.getElementById('teamLogoImg').src = team.logo;
+            document.getElementById('totalPlayers').textContent = playingXI.length;
+            document.getElementById('foreignCount').textContent = playingXI.filter(p => p && p.country !== "India").length;
+            document.getElementById('indianCount').textContent = playingXI.filter(p => p && p.country === "India").length;
+           
+            document.getElementById('storySubtitle').textContent = `${team.short} • IPL 2026 DREAM TEAM`;
+            document.getElementById('storyTeamName').textContent = team.name;
+
+            const renderCard = (player, idx) => {
+                const isCaptain = player.name === captain;
+                const isVC = player.name === viceCaptain;
+                const isWK = player.role === "Wicket Keeper";
+                return `<div class="player-card-submit">
+                            <div class="batting-order">${idx+1}</div>
+                            <img class="player-img-submit" src="${player.img || 'https://via.placeholder.com/75'}" onerror="this.src='https://via.placeholder.com/75'">
+                            <div class="player-name-submit">${player.name}</div>
+                            <div class="player-role-submit">${player.role} • ${player.country === 'India' ? '🇮🇳' : '✈️'}</div>
+                            <div class="player-badges">
+                                ${isCaptain ? '<span class="mini-badge badge-captain">CAPTAIN (C)</span>' : ''}
+                                ${isVC ? '<span class="mini-badge badge-vc">VICE CAPTAIN (VC)</span>' : ''}
+                                ${isWK ? '<span class="mini-badge badge-wk">WK</span>' : ''}
+                            </div>
+                        </div>`;
+            };
+            
+            const topRow = playingXI.slice(0, 6);
+            const bottomRow = playingXI.slice(6, 11);
+            document.getElementById('topRowGrid').innerHTML = topRow.map((p,i) => renderCard(p,i)).join('');
+            document.getElementById('bottomRowGrid').innerHTML = bottomRow.map((p,i) => renderCard(p,i+6)).join('');
+
+            const verticalContainer = document.getElementById('verticalPlayersList');
+            verticalContainer.style.display = "flex";
+            verticalContainer.style.flexDirection = "column";
+            verticalContainer.style.height = "100%";
+            verticalContainer.style.justifyContent = "space-between";
+            verticalContainer.innerHTML = playingXI.map((player, idx) => {
+                const isCaptain = player.name === captain;
+                const isVC = player.name === viceCaptain;
+                const isWK = player.role === "Wicket Keeper";
+                const isImpact = impactPlayers.some(ip => ip.name === player.name);
+                return `<div class="vertical-player-card">
+                            <div class="vertical-order">${idx+1}</div>
+                            <img class="vertical-player-img" src="${player.img || 'https://via.placeholder.com/50'}" onerror="this.src='https://via.placeholder.com/50'">
+                            <div class="vertical-player-info">
+                                <div class="vertical-player-name">${player.name} ${isCaptain ? '👑' : isVC ? '⭐' : ''}</div>
+                                <div class="vertical-player-role">${player.role} • ${player.country === 'India' ? '🇮🇳 Indian' : '✈️ Foreign'}</div>
+                                <div class="vertical-badges">
+                                    ${isCaptain ? '<span class="v-badge badge-captain">C</span>' : ''}
+                                    ${isVC ? '<span class="v-badge badge-vc">VC</span>' : ''}
+                                    ${isWK ? '<span class="v-badge badge-wk">WK</span>' : ''}
+                                    ${isImpact ? '<span class="v-badge badge-impact">IMPACT</span>' : ''}
+                                </div>
+                            </div>
+                        </div>`;
+            }).join('');
+
+            const impactContainer = document.getElementById('impactPlayersList');
+            if (impactPlayers.length) {
+                impactContainer.innerHTML = impactPlayers.map(p => `
+                    <div class="impact-player-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,215,0,0.15); padding: 6px 16px; border-radius: 40px; font-size: 0.85rem; border-left: 3px solid var(--team-primary); white-space: nowrap;">
+                        <i class="fas fa-bolt" style="color: var(--team-primary);"></i> 
+                        <strong>${p.name}</strong> 
+                        <span style="opacity:0.7;">(${p.role})</span>
+                    </div>
+                `).join('');
+            } else {
+                impactContainer.innerHTML = '<div class="impact-player-tag" style="display: inline-flex;">No impact players selected</div>';
+            }
+
+            const storyGrid = document.getElementById('storyPlayersGrid');
+            storyGrid.innerHTML = playingXI.map((p, idx) => `<div class="story-player-card"><img class="story-player-img" src="${p.img || 'https://via.placeholder.com/90'}" onerror="this.src='https://via.placeholder.com/90'"><div class="story-player-name">${idx+1}. ${p.name} ${p.name === captain ? '👑' : p.name === viceCaptain ? '⭐' : ''}</div><div class="story-player-role">${p.role}</div></div>`).join('');
+
+            const gridViewDiv = document.getElementById('gridView'), verticalViewDiv = document.getElementById('verticalView');
+            document.getElementById('gridViewBtn').onclick = () => { gridViewDiv.classList.add('active'); verticalViewDiv.classList.remove('active'); document.getElementById('gridViewBtn').classList.add('active'); document.getElementById('verticalViewBtn').classList.remove('active'); };
+            document.getElementById('verticalViewBtn').onclick = () => { verticalViewDiv.classList.add('active'); gridViewDiv.classList.remove('active'); document.getElementById('verticalViewBtn').classList.add('active'); document.getElementById('gridViewBtn').classList.remove('active'); };
+            
+            // DOWNLOAD BUTTON - ENHANCED WITH TEAM COLOR BACKGROUND
+           // Replace the DOWNLOAD BUTTON section completely
+// ========== FIXED: BOTH BUTTONS USE SAME IMAGE ==========
+
+// Create a SINGLE function to generate the team image
+async function generateTeamImage() {
+    const canvas = await captureGridView();
+    
+    // Use FIXED dimensions for consistency
+    const finalCanvas = document.createElement('canvas');
+    finalCanvas.width = 1080;  // Standard social media size
+    finalCanvas.height = 1920;  // Standard story size
+    const ctx = finalCanvas.getContext('2d');
+    
+    const teamShort = document.body.className.toUpperCase();
+    const teamColors = {
+        CSK: { primary: '#FFD700', secondary: '#FFA500', bgStart: '#1a1500', bgMid: '#2a2000', bgEnd: '#1a1500' },
+        MI: { primary: '#0055A4', secondary: '#FFD700', bgStart: '#050a12', bgMid: '#0a121f', bgEnd: '#050a12' },
+        RCB: { primary: '#E31B23', secondary: '#FF4D4D', bgStart: '#1a0a0a', bgMid: '#2a0f0f', bgEnd: '#3a0a0a' },
+        KKR: { primary: '#8B5CF6', secondary: '#FFD700', bgStart: '#1a0f2e', bgMid: '#2a1a4a', bgEnd: '#1a0f2e' },
+        SRH: { primary: '#FF7F00', secondary: '#FF9933', bgStart: '#1a0f0a', bgMid: '#2a1a0f', bgEnd: '#3a1f0a' },
+        DC: { primary: '#004C97', secondary: '#E31B23', bgStart: '#0a121f', bgMid: '#0f1a2a', bgEnd: '#1a1f2a' },
+        RR: { primary: '#FF69B4', secondary: '#FF85C1', bgStart: '#1a0f1a', bgMid: '#2a152a', bgEnd: '#3a1a3a' },
+        PBKS: { primary: '#E31B23', secondary: '#C0C0C0', bgStart: '#1a0a0a', bgMid: '#2a1515', bgEnd: '#3a1a1a' },
+        LSG: { primary: '#FF6B00', secondary: '#003B6F', bgStart: '#0a1628', bgMid: '#1a2a4a', bgEnd: '#0f1f3a' },
+        GT: { primary: '#00AEEF', secondary: '#1C1C1C', bgStart: '#0a1628', bgMid: '#0d1f3a', bgEnd: '#0a1628' }
+    };
+    const colors = teamColors[teamShort] || teamColors.CSK;
+    
+    // Draw background
+    const gradient = ctx.createLinearGradient(0, 0, 0, finalCanvas.height);
+    gradient.addColorStop(0, colors.bgStart);
+    gradient.addColorStop(0.5, colors.bgMid);
+    gradient.addColorStop(1, colors.bgEnd);
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+    
+    // Draw glow effect
+    const radGrad = ctx.createRadialGradient(finalCanvas.width/2, 400, 150, finalCanvas.width/2, 400, 700);
+    radGrad.addColorStop(0, `${colors.primary}25`);
+    radGrad.addColorStop(1, 'transparent');
+    ctx.fillStyle = radGrad;
+    ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+    
+    // Draw the captured team content
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    
+    return new Promise((resolve, reject) => {
+        img.onload = () => {
+            const targetWidth = finalCanvas.width - 80;
+            const targetHeight = (img.height * targetWidth) / img.width;
+            const x = 40;
+            const y = 60;
+            
+            ctx.shadowColor = 'rgba(0,0,0,0.5)';
+            ctx.shadowBlur = 25;
+            ctx.shadowOffsetY = 12;
+            ctx.drawImage(img, x, y, targetWidth, targetHeight);
+            ctx.shadowColor = 'transparent';
+            
+            ctx.strokeStyle = colors.primary;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(x - 3, y - 3, targetWidth + 6, targetHeight + 6);
+            
+            const footerY = y + targetHeight + 35;
+            
+            // Footer background
+            ctx.fillStyle = `${colors.primary}10`;
+            ctx.fillRect(35, footerY, finalCanvas.width - 70, 120);
+            ctx.strokeStyle = `${colors.primary}40`;
+            ctx.strokeRect(35, footerY, finalCanvas.width - 70, 120);
+            
+            // Website text
+            ctx.font = `bold 28px "Orbitron", "Poppins", monospace`;
+            ctx.fillStyle = colors.primary;
+            ctx.fillText('www.bowledbyher.online', 55, footerY + 48);
+            
+            ctx.font = `12px "Poppins", sans-serif`;
+            ctx.fillStyle = '#ffffffcc';
+            ctx.fillText('Independent fan platform • Create your dream team for free', 55, footerY + 82);
+            ctx.fillText('Not affiliated with BCCI, ICC, or any IPL franchise', 55, footerY + 105);
+            
+            // Logo
+            const logoSize = 80;
+            const logoX = finalCanvas.width - 55 - logoSize;
+            const logoY = footerY + 20;
+            
+            const logoImg = new Image();
+            logoImg.crossOrigin = "Anonymous";
+            logoImg.onload = () => {
+                ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+                resolve(finalCanvas.toDataURL('image/png'));
+            };
+            logoImg.onerror = () => {
+                ctx.beginPath();
+                ctx.arc(logoX + logoSize/2, logoY + logoSize/2, logoSize/2, 0, 2 * Math.PI);
+                ctx.fillStyle = colors.primary;
+                ctx.fill();
+                ctx.fillStyle = '#000';
+                ctx.font = `bold 26px "Orbitron", monospace`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('BBH', logoX + logoSize/2, logoY + logoSize/2);
+                ctx.textAlign = 'left';
+                resolve(finalCanvas.toDataURL('image/png'));
+            };
+            logoImg.src = 'bbhlogo2.png';
+        };
+        img.onerror = reject;
+        img.src = canvas.toDataURL();
+    });
+}
+
+// ========== DOWNLOAD BUTTON (Uses same image as share) ==========
+document.getElementById('downloadBtn').onclick = async () => { 
+    showToast('🎨 Generating your dream team poster...'); 
+    try { 
+        const imageData = await generateTeamImage();
+        const link = document.createElement('a'); 
+        link.download = `BowledByHer_${document.body.className.toUpperCase()}_DreamTeam.png`; 
+        link.href = imageData; 
+        link.click();
+        showToast('✅ Team poster downloaded! 🏆');
+    } catch(e) { 
+        console.error(e); 
+        showToast('❌ Error generating image', true); 
+    } 
+};
+
+// ========== SHARE BUTTON (Uses SAME image as download) ==========
+document.getElementById('shareBtn').onclick = async () => {
+    try {
+        showToast("📸 Preparing share image...");
+        const imageData = await generateTeamImage();
+        currentImageData = imageData;
+        document.getElementById('sharePreviewImg').src = imageData;
+        document.getElementById('shareModal').style.display = 'flex';
+        showToast('✅ Share image ready!');
+    } catch (err) {
+        console.error(err);
+        showToast("❌ Share preparation failed!", true);
+    }
+};
+
+// ========== SAVE IMAGE FROM SHARE MODAL ==========
+document.getElementById('downloadShareBtn').onclick = () => { 
+    if(currentImageData){ 
+        const a = document.createElement('a'); 
+        a.download = `BowledByHer_${document.body.className.toUpperCase()}_Team.png`; 
+        a.href = currentImageData; 
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a); 
+        showToast('✅ Image saved to gallery! 📱'); 
+        document.getElementById('shareModal').style.display = 'none';
+    } 
+};
+
+// ========== NATIVE SHARE ANYWHERE ==========
+document.getElementById('nativeShareBtn').onclick = async () => {
+    if(currentImageData) {
+        try {
+            const blob = await (await fetch(currentImageData)).blob();
+            const file = new File([blob], 'DreamTeam.png', { type: 'image/png' });
+            if (navigator.share) {
+                await navigator.share({
+                    title: 'My IPL 2026 Dream Team',
+                    text: `Check out my ${teamName} squad! Built with BowledByHer.`,
+                    files: [file]
+                });
+                showToast('✅ Shared successfully!');
+                document.getElementById('shareModal').style.display = 'none';
+            } else {
+                const a = document.createElement('a');
+                a.download = `BowledByHer_Team.png`;
+                a.href = currentImageData;
+                a.click();
+                showToast('✅ Image saved. You can now share it anywhere.', false);
+            }
+        } catch(err) {
+            if(err.name !== 'AbortError') showToast('❌ Sharing failed', true);
+        }
+    }
+};
+            // SHARE BUTTON - ENHANCED WITH TEAM COLOR
+          // Replace the SHARE BUTTON section
+document.getElementById('shareBtn').onclick = async () => {
+    try {
+        showToast("📸 Preparing share image...");
+        const canvas = await captureGridView();
+        
+        const shareCanvas = document.createElement('canvas');
+        shareCanvas.width = 1080;
+        shareCanvas.height = 1920;
+        const ctx = shareCanvas.getContext('2d');
+        
+        const teamShort = document.body.className.toUpperCase();
+        const teamColors = {
+            CSK: { primary: '#FFD700', secondary: '#FFA500', bgStart: '#1a1500', bgMid: '#2a2000', bgEnd: '#1a1500' },
+            MI: { primary: '#0055A4', secondary: '#FFD700', bgStart: '#050a12', bgMid: '#0a121f', bgEnd: '#050a12' },
+            RCB: { primary: '#E31B23', secondary: '#FF4D4D', bgStart: '#1a0a0a', bgMid: '#2a0f0f', bgEnd: '#3a0a0a' },
+            KKR: { primary: '#8B5CF6', secondary: '#FFD700', bgStart: '#1a0f2e', bgMid: '#2a1a4a', bgEnd: '#1a0f2e' },
+            SRH: { primary: '#FF7F00', secondary: '#FF9933', bgStart: '#1a0f0a', bgMid: '#2a1a0f', bgEnd: '#3a1f0a' },
+            DC: { primary: '#004C97', secondary: '#E31B23', bgStart: '#0a121f', bgMid: '#0f1a2a', bgEnd: '#1a1f2a' },
+            RR: { primary: '#FF69B4', secondary: '#FF85C1', bgStart: '#1a0f1a', bgMid: '#2a152a', bgEnd: '#3a1a3a' },
+            PBKS: { primary: '#E31B23', secondary: '#C0C0C0', bgStart: '#1a0a0a', bgMid: '#2a1515', bgEnd: '#3a1a1a' },
+            LSG: { primary: '#FF6B00', secondary: '#003B6F', bgStart: '#0a1628', bgMid: '#1a2a4a', bgEnd: '#0f1f3a' },
+            GT: { primary: '#00AEEF', secondary: '#1C1C1C', bgStart: '#0a1628', bgMid: '#0d1f3a', bgEnd: '#0a1628' }
+        };
+        const colors = teamColors[teamShort] || teamColors.CSK;
+        
+        const gradient = ctx.createLinearGradient(0, 0, 0, shareCanvas.height);
+        gradient.addColorStop(0, colors.bgStart);
+        gradient.addColorStop(0.5, colors.bgMid);
+        gradient.addColorStop(1, colors.bgEnd);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, shareCanvas.width, shareCanvas.height);
+        
+        const radGrad = ctx.createRadialGradient(shareCanvas.width/2, 400, 150, shareCanvas.width/2, 400, 700);
+        radGrad.addColorStop(0, `${colors.primary}25`);
+        radGrad.addColorStop(1, 'transparent');
+        ctx.fillStyle = radGrad;
+        ctx.fillRect(0, 0, shareCanvas.width, shareCanvas.height);
+        
+        const img = new Image();
+        img.crossOrigin = "Anonymous";
+        img.onload = () => {
+            const targetWidth = shareCanvas.width - 80;
+            const targetHeight = (img.height * targetWidth) / img.width;
+            const x = 40;
+            const y = 60;
+            
+            ctx.shadowColor = 'rgba(0,0,0,0.5)';
+            ctx.shadowBlur = 25;
+            ctx.shadowOffsetY = 12;
+            ctx.drawImage(img, x, y, targetWidth, targetHeight);
+            ctx.shadowColor = 'transparent';
+            
+            ctx.strokeStyle = colors.primary;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(x - 3, y - 3, targetWidth + 6, targetHeight + 6);
+            
+            const footerY = y + targetHeight + 35;
+            
+            ctx.fillStyle = `${colors.primary}10`;
+            ctx.fillRect(35, footerY, shareCanvas.width - 70, 120);
+            ctx.strokeStyle = `${colors.primary}40`;
+            ctx.strokeRect(35, footerY, shareCanvas.width - 70, 120);
+            
+            ctx.font = `bold 28px "Orbitron", "Poppins", monospace`;
+            ctx.fillStyle = colors.primary;
+            ctx.fillText('www.bowledbyher.online', 55, footerY + 48);
+            
+            ctx.font = `12px "Poppins", sans-serif`;
+            ctx.fillStyle = '#ffffffcc';
+            ctx.fillText('Independent fan platform • Create your dream team for free', 55, footerY + 82);
+            ctx.fillText('Not affiliated with BCCI, ICC, or any IPL franchise', 55, footerY + 105);
+            
+            const logoSize = 80;
+            const logoX = shareCanvas.width - 55 - logoSize;
+            const logoY = footerY + 20;
+            
+            const logoImg = new Image();
+            logoImg.crossOrigin = "Anonymous";
+            logoImg.onload = () => {
+                ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+                finalizeShare();
+            };
+            logoImg.onerror = () => {
+                ctx.beginPath();
+                ctx.arc(logoX + logoSize/2, logoY + logoSize/2, logoSize/2, 0, 2 * Math.PI);
+                ctx.fillStyle = colors.primary;
+                ctx.fill();
+                ctx.fillStyle = '#000';
+                ctx.font = `bold 26px "Orbitron", monospace`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('BBH', logoX + logoSize/2, logoY + logoSize/2);
+                ctx.textAlign = 'left';
+                finalizeShare();
+            };
+            logoImg.src = 'bbhlogo2.png';
+            
+            function finalizeShare() {
+                const finalImage = shareCanvas.toDataURL('image/png');
+                currentImageData = finalImage;
+                document.getElementById('sharePreviewImg').src = finalImage;
+                document.getElementById('shareModal').style.display = 'flex';
+                showToast('✅ Share image ready!');
+            }
+        };
+        img.src = canvas.toDataURL();
+        
+    } catch (err) {
+        console.error(err);
+        showToast("❌ Share preparation failed!", true);
+    }
+};
+
+// DOWNLOAD
+document.getElementById('downloadShareBtn').onclick = () => { 
+    if(currentImageData){ 
+        const a=document.createElement('a'); 
+        a.download=`BowledByHer_${team.short}_Story.png`; 
+        a.href=currentImageData; 
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a); 
+        showToast('Story image saved to gallery! 📱'); 
+    } 
+};
+
+// SHARE ANYWHERE (Web Share API)
+document.getElementById('nativeShareBtn').onclick = async () => {
+    if(currentImageData) {
+        const blob = await (await fetch(currentImageData)).blob();
+        const file = new File([blob], 'dreamteam.png', { type: 'image/png' });
+        if (navigator.share) {
+            navigator.share({
+                title: 'My IPL 2026 Dream Team',
+                text: `Check out my ${teamName} squad! Built with BowledByHer.`,
+                files: [file]
+            }).catch(err => {
+                if(err.name !== 'AbortError') showToast('❌ Sharing failed', true);
+            });
+        } else {
+            const a = document.createElement('a');
+            a.download = `BowledByHer_${teamShort}_DreamTeam.png`;
+            a.href = currentImageData;
+            a.click();
+            showToast('✅ Image saved. You can now share it anywhere.', false);
+        }
+    }
+};
+// close modal remains functional but we keep original handler
+            
+            const modal = document.getElementById('shareModal');
+            document.getElementById('closeModalBtn').onclick = () => modal.style.display = 'none';
+            modal.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
+            document.getElementById('closeStory').onclick = () => document.getElementById('storyContainer').style.display = 'none';
+        });
+
+        const niroarFooter = document.getElementById("niroarFooter");
+        const niroarCursor = document.getElementById("niroarCursor");
+        if (niroarFooter && niroarCursor) {
+            niroarFooter.addEventListener("mousemove", (e) => {
+                const rect = niroarFooter.getBoundingClientRect();
+                niroarCursor.style.left = (e.clientX - rect.left) + "px";
+                niroarCursor.style.top = (e.clientY - rect.top) + "px";
+            });
+        }
+
+        
+    </script>
+</body>
+</html>

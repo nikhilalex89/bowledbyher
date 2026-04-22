@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>About BowledByHer | Powered by Niroar Tech | Nikhil Alex</title>
+    
+    <link rel="icon" type="image/png" sizes="256x256" href="Niroarlogo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Niroarlogo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Niroarlogo.png">
+    <link rel="shortcut icon" href="Niroarlogo.png">
+    <!-- SEO Meta -->
+     <meta name="description" content="BowledByHer is a free IPL 2026 team builder by Nikhil Alex. No betting, no leagues, pure cricket. A Niroar Tech venture.">
+    <meta name="keywords" content="Nikhil Alex, Niroar Tech, free IPL tool, cricket team builder, IPL 2026 selector, BowledByHer founder">
+    <meta name="author" content="Nikhil Alex | Niroar Tech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bowledbyher.online/niroarabout.html">
+    <meta property="og:title" content="About BowledByHer | Free IPL Team Builder">
+    <meta property="og:description" content="Free IPL 2026 team builder by Nikhil Alex. No betting, pure cricket. Powered by Niroar Tech.">
+    <meta property="og:image" content="https://bowledbyher.online/og-image.jpg">
+    <meta property="og:site_name" content="BowledByHer">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About BowledByHer">
+    <meta name="twitter:description" content="Free IPL team builder. No betting, no leagues. Pure cricket passion.">
+    <meta name="twitter:image" content="https://bowledbyher.online/og-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bowledbyher.online/niroarabout.html">
+    
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="256x256" href="bbhfav.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="bbhfav.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050508;
+            font-family: 'Inter', sans-serif;
+            color: #e8e8e8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Premium Background Texture */
+        .bg-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 48px 48px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-orb {
+            position: fixed;
+            top: -20%;
+            right: -15%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.04), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-orb-left {
+            position: fixed;
+            bottom: -20%;
+            left: -15%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.03), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            margin-bottom: 64px;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 98px;
+            height: 98px;
+            background: linear-gradient(135deg, #ffffff, #9a9a9a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.06) rotate(2deg);
+            box-shadow: 0 0 28px rgba(255,255,255,0.15);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 2px;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #999;
+        }
+
+        /* Niroar Badge - BIG & STYLISH */
+        /* 🔥 NIROAR LOGO — ULTRA CLEAN / NO BOX */
+.niroar-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* no background */
+    border: none; /* no border */
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+/* 🔥 EXTREMELY BIG LOGO */
+.niroar-badge img {
+    height: 130px; /* 🔥 BIG */
+    width: auto;
+    filter: brightness(0.65) contrast(1.05);
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+/* 🔥 TAGLINE — SMALL & SHORT */
+.niroar-badge .tagline {
+    margin-top: 6px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.55rem; /* small */
+    letter-spacing: 2px;
+    color: #888;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* 🔥 DYNAMIC HOVER — PREMIUM FEEL */
+.niroar-badge:hover img {
+    transform: scale(1.08) translateY(-4px);
+    filter: brightness(1.2) contrast(1.1)
+            drop-shadow(0 0 12px rgba(255,255,255,0.5))
+            drop-shadow(0 0 28px rgba(255,255,255,0.2));
+}
+
+/* 🔥 SOFT GLOW PULSE */
+.niroar-badge:hover img {
+    animation: niroarPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes niroarPulse {
+    0% {
+        drop-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
+    50% {
+        drop-shadow: 0 0 18px rgba(255,255,255,0.6);
+    }
+    100% {
+        drop-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
+}
+
+/* 🔥 TAGLINE RESPONSE */
+.niroar-badge:hover .tagline {
+    color: #fff;
+    letter-spacing: 3px;
+    transform: translateY(2px);
+}
+
+        /* Cards */
+        .card {
+            background: rgba(8, 8, 12, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 36px;
+            padding: 48px 52px;
+            margin-bottom: 48px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.35s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            font-size: 1.9rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 600;
+            margin-bottom: 32px;
+            border-left: 4px solid #ffffff;
+            padding-left: 26px;
+        }
+
+        .card h2 i {
+            margin-right: 12px;
+            opacity: 0.8;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 28px 0 18px 0;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .highlight-box {
+            background: rgba(255,255,255,0.03);
+            padding: 22px 26px;
+            border-radius: 24px;
+            margin-top: 24px;
+            border-left: 2px solid #fff;
+        }
+
+        /* How-To Grid */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .step {
+            background: rgba(255,255,255,0.03);
+            border-radius: 24px;
+            padding: 22px;
+            transition: all 0.25s;
+        }
+
+        .step:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        /* Roadmap Grid */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .roadmap-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            transition: 0.25s;
+        }
+
+        .roadmap-item:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateX(6px);
+        }
+
+        .roadmap-badge {
+            background: #ffffff;
+            color: #000000;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 30px;
+            margin-right: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Contact Section */
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin: 28px 0 16px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.04);
+            padding: 12px 30px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.09);
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Disclaimer Section */
+        .disclaimer-section {
+            background: #0a0a0e;
+            border-radius: 32px;
+            padding: 42px 48px;
+            margin: 48px 0 40px;
+            border: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+
+        .disclaimer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .disclaimer-section p {
+            font-size: 0.85rem;
+            color: #bbbbbb;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Elegant Back Button */
+        .back-button-container {
+            text-align: center;
+            margin: 32px 0 48px;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+            padding: 16px 42px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.4s ease;
+            font-family: 'Orbitron', monospace;
+            backdrop-filter: blur(8px);
+        }
+
+        .back-to-home i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+            border-color: rgba(255,255,255,0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .back-to-home:hover i {
+            transform: translateX(-5px);
+        }
+
+        /* Simple Footer */
+        .simple-footer {
+            text-align: center;
+            padding: 30px 0 50px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            margin-top: 20px;
+        }
+
+        .simple-footer p {
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 950px) {
+            .container { padding: 0 24px; }
+            .card { padding: 32px 28px; }
+            .two-columns { grid-template-columns: 1fr; gap: 32px; }
+            .card h2 { font-size: 1.6rem; }
+        }
+
+        @media (max-width: 600px) {
+            .header { flex-direction: column; text-align: center; }
+            .card { padding: 24px 20px; }
+            .steps-container { grid-template-columns: 1fr; }
+            .roadmap-grid { grid-template-columns: 1fr; }
+            .disclaimer-section { padding: 28px 20px; }
+            .back-to-home { padding: 12px 28px; font-size: 0.85rem; }
+            .niroar-badge img { height: 45px; }
+            .niroar-badge { padding: 8px 20px; }
+        }
+
+        /* Animation */
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .niroar-footer-zone {
+        position: relative;
+        background: #000;
+        padding: 120px 40px 70px;
+        overflow: hidden;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .niroar-light-orb {
+        position: absolute;
+        width: 340px;
+        height: 340px;
+        background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+    .niroar-depth-layer {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 60%);
+        transform: perspective(900px) rotateX(55deg);
+        opacity: 0;
+        transition: 0.6s ease;
+    }
+    .niroar-content-core {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+    }
+    .niroar-powered-line {
+        color: rgba(255,255,255,0.85);
+        letter-spacing: 6px;
+        font-size: 0.7rem;
+        margin-bottom: 45px;
+    }
+    .niroar-logo-frame {
+        position: relative;
+        width: 260px;
+        margin: auto;
+    }
+    .niroar-logo-frame::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+        transform: skewX(-20deg);
+        opacity: 0;
+    }
+    .niroar-emblem {
+        width: 100%;
+        transition: 0.4s ease;
+        filter: grayscale(100%) brightness(0.55) drop-shadow(0 0 8px rgba(255,255,255,0.1));
+    }
+    .niroar-logo-frame:hover .niroar-emblem {
+        transform: scale(1.08);
+        filter: grayscale(0%) brightness(1.3) drop-shadow(0 0 30px rgba(255,255,255,0.9)) drop-shadow(0 0 70px rgba(255,255,255,0.4));
+    }
+    .niroar-logo-frame:hover::after {
+        animation: niroar-sheen-move 1s ease forwards;
+        opacity: 1;
+    }
+    @keyframes niroar-sheen-move {
+        from { left: -100%; }
+        to { left: 130%; }
+    }
+    .niroar-logo-frame:hover ~ .niroar-depth-layer {
+        opacity: 0.3;
+        transform: perspective(900px) rotateX(50deg) scale(1.05);
+    }
+    .niroar-tagline-text {
+        margin-top: 25px;
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+        color: rgba(255,255,255,0.75);
+        transition: 0.3s;
+    }
+    .niroar-logo-frame:hover + .niroar-tagline-text {
+        color: #ffffff;
+        letter-spacing: 5px;
+    }
+    .niroar-marquee-wrap {
+        margin-top: 60px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .niroar-track-line {
+        display: inline-block;
+        animation: niroar-scroll-flow 22s linear infinite;
+    }
+    .niroar-scroll-item {
+        padding: 0 60px;
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        color: rgba(255,255,255,0.9);
+    }
+    @keyframes niroar-scroll-flow {
+        100% { transform: translateX(-50%); }
+    }
+    .niroar-divider-line {
+        margin: 75px auto 35px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent);
+    }
+    .niroar-copy-note {
+        text-align: center;
+        color: rgba(255,255,255,0.5);
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    </style>
+</head>
+<body>
+
+<div class="bg-texture"></div>
+<div class="bg-orb"></div>
+<div class="bg-orb-left"></div>
+
+<div class="container">
+    <!-- Header with BowledByHer Logo + Niroar Badge (CLICKABLE) -->
+    <header class="header">
+        <div class="logo-wrapper">
+            <div class="logo">
+                <img src="superbbh.webp" alt="BowledByHer" onerror="this.src='https://placehold.co/58x58'">
+            </div>
+            <div class="logo-text">
+                <h1>BOWLEDBYHER</h1>
+                <p>SELECT • SHARE • CELEBRATE</p>
+            </div>
+        </div>
+        <a href="niroarabout.html" style="text-decoration: none;">
+            <div class="niroar-badge">
+                <div class="tagline">POWERED BY</div>
+                <img src="Niroarlogo.png" alt="Niroar Tech" onerror="this.src='https://placehold.co/140x58'">
+                <div class="tagline">ROAR INTO ACTION</div>
+            </div>
+        </a>
+    </header>
+
+    <!-- FOUNDER Section -->
+    <div class="card">
+        <h2><i class="fas fa-user"></i> The Founder</h2>
+        <div class="two-columns">
+            <div>
+                <p><strong>Nikhil Alex</strong> from Kerala, India. Currently pursuing my bachelor's degree at <strong>Lovely Professional University, Punjab</strong>. I'm an aspiring software developer, entrepreneur at heart and an innovation enthusiast who believes technology should serve passion, not monetization.</p>
+                <p style="margin-top: 20px;">Cricket isn't just a sport, it's a strategic battlefield. The endless debates about playing XIs, batting orders, and team combinations inspired me to build platforms where fans can visualize their perfect teams without commercial noise.</p>
+                <div class="highlight-box">
+                    <i class="fas fa-quote-left" style="margin-right: 8px; opacity: 0.7;"></i> Innovation happens when passion meets persistence.
+                </div>
+            </div>
+            <div>
+                <p><strong>YourCricket11.fun</strong> was my first major project, a platform for building Indian all-time XIs across formats. Thousands of fans have used it to create and share their dream teams, completely free.</p>
+                <p style="margin-top: 20px;">Now, <strong>BowledByHer</strong> brings the same selector spirit to the IPL universe. Built with zero commercial intent, no betting, no fantasy leagues — just the pure love of cricket strategy.</p>
+                <p style="margin-top: 20px;"><i class="fas fa-map-marker-alt"></i> Kerala, India &nbsp;&nbsp;|&nbsp;&nbsp; <i class="fas fa-graduation-cap"></i> Lovely Professional University, Punjab</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NIROAR TECH Section -->
+    <div class="card">
+        <h2><i class="fas fa-crown"></i> Niroar Tech</h2>
+        <div class="two-columns">
+            <div>
+                <p><strong>Niroar Tech</strong> is my creative technology venture, a space where bold ideas become impactful digital realities.</p>
+                <p style="margin-top: 20px; font-family: 'Orbitron', monospace; font-size: 1.1rem; letter-spacing: 2px;">— Roar Into Action —</p>
+                <p style="margin-top: 20px;">Niroar exists to turn imagination into engineered reality. BowledByHer is the second major project under Niroar, following YourCricket11.fun. Both reflect my commitment to building meaningful, fan-first experiences without commercial distractions.</p>
+            </div>
+            <div>
+                <div class="highlight-box">
+                    <i class="fas fa-rocket"></i> Building for the love of cricket, not for profit.
+                </div>
+                <p style="margin-top: 24px;">Every project under Niroar Tech shares the same mission: empower users with tools to express their passion, whether it's cricket, creativity, or community.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT IS BOWLEDBYHER + HOW TO USE -->
+    <div class="card">
+        <h2><i class="fas fa-cricket-bat-ball"></i> BowledByHer — Platform & Guide</h2>
+        <p style="font-size: 1.05rem; margin-bottom: 28px;"><strong>BowledByHer</strong> is a digital canvas for IPL fans to construct, analyze, and share their ideal 2026 playing XI. No fantasy leagues, no betting, no commercial motives — just pure cricket strategy.</p>
+        
+        <div class="two-columns">
+            <div>
+                <h3>What You Can Do</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> 10 IPL franchises with 2026 realistic squads</li>
+                    <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> Batting order positions (Opener → Finisher → Bowler)</li>
+                    <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> Real IPL rules: max 4 foreign, 1 wicket-keeper</li>
+                    <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> Impact Players (5 max) — IPL's tactical twist</li>
+                    <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> Captain & Vice Captain selection</li>
+                    <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> Franchise-specific Legends alongside current stars</li>
+                    <li><i class="fas fa-check-circle" style="margin-right: 14px; color: #fff;"></i> Story-ready image download & social sharing</li>
+                </ul>
+            </div>
+            <div>
+                <h3>How to Use</h3>
+                <div class="steps-container" style="grid-template-columns: 1fr;">
+                    <div class="step"><div class="step-number">01</div> <strong>Select Franchise</strong> — Click any team card (CSK, MI, RCB, etc.) to load its player pool.</div>
+                    <div class="step"><div class="step-number">02</div> <strong>Drag & Drop</strong> — Drag players from left panel into the 11 slots. Touch & drag works on mobile.</div>
+                    <div class="step"><div class="step-number">03</div> <strong>Set Batting Order</strong> — Each slot has a position. Arrange as you like.</div>
+                    <div class="step"><div class="step-number">04</div> <strong>Add Impact Players</strong> — Drop players into Impact section (max 5).</div>
+                    <div class="step"><div class="step-number">05</div> <strong>Captain & VC</strong> — Select from dropdown menus for multipliers.</div>
+                    <div class="step"><div class="step-number">06</div> <strong>Save & Share</strong> — Click "Save & Share" to generate image. Share on WhatsApp, Instagram, or share anywhere.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROADMAP / FUTURE UPDATES -->
+    <div class="card">
+        <h2><i class="fas fa-chart-line"></i> Roadmap</h2>
+        <div class="roadmap-grid">
+            <div class="roadmap-item"><i class="fas fa-history"></i> <span><span class="roadmap-badge">PLANNED</span> Old IPL teams — RPS, KTK, GL, Kochi Tuskers</span></div>
+            <div class="roadmap-item"><i class="fas fa-star"></i> <span><span class="roadmap-badge">PLANNED</span> More Legends across all 10 franchises</span></div>
+            <div class="roadmap-item"><i class="fas fa-user-plus"></i> <span><span class="roadmap-badge">PLANNED</span> User accounts — save multiple teams</span></div>
+            <div class="roadmap-item"><i class="fas fa-trophy"></i> <span><span class="roadmap-badge">PRE-PLAYOFFS</span> Best Playing XI — data-driven selection</span></div>
+            <div class="roadmap-item"><i class="fas fa-chart-simple"></i> <span><span class="roadmap-badge">LIVE</span> Minimal live scores — non-intrusive</span></div>
+            <div class="roadmap-item"><i class="fas fa-comments"></i> <span><span class="roadmap-badge">COMMUNITY</span> Chat room — cricket analyst & coach</span></div>
+            <div class="roadmap-item"><i class="fas fa-globe"></i> <span><span class="roadmap-badge">INTEGRATION</span> Merge YourCricket11 (Indian Team selector)</span></div>
+            <div class="roadmap-item"><i class="fab fa-youtube"></i> <span><span class="roadmap-badge">CONTENT</span> Blogs, analysis & YouTube series</span></div>
+            <div class="roadmap-item"><i class="fas fa-mobile-alt"></i> <span><span class="roadmap-badge">2027</span> BowledByHer Mobile App (iOS/Android)</span></div>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION (LinkedIn + Email opens mail client) -->
+    <!-- CONTACT SECTION (LinkedIn + Email + Instagram) -->
+<div class="card" style="text-align: center;">
+    <h2><i class="fas fa-address-card"></i> Connect</h2>
+    <p style="margin-bottom: 28px;">Feedback, feature requests, or just want to talk cricket strategy? Reach out.</p>
+    <div class="contact-row">
+        <a href="https://www.linkedin.com/in/nikhil-alex-1a6014375" target="_blank" class="contact-link">
+            <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i> LinkedIn / Nikhil Alex
+        </a>
+        <a href="mailto:nikhilalex888@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> Send Email
+        </a>
+        <a href="https://www.instagram.com/bowledbyher.online" target="_blank" class="contact-link">
+            <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> Instagram / @bowledbyher.online
+        </a>
+    </div>
+    <p style="font-size: 0.7rem; color: #777; margin-top: 20px;">Clicking email opens your default mail client. I respond to every message.</p>
+</div>
+
+    
+
+    <!-- DISCLAIMER SECTION -->
+    <div class="disclaimer-section">
+        <h3><i class="fas fa-scale-balanced"></i> Disclaimer</h3>
+        <p><strong>BowledByHer and YourCricket11.fun are independent fan-made platforms.</strong> They are NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with the BCCI, ICC, IPL, any international or domestic cricket board, franchise, league, or club. All player names, images, and team logos are used solely for illustrative, non-commercial, fan-appreciation purposes under fair use. This platform operates with zero commercial intent — no paid features, no betting, no fantasy money leagues. It is built purely for the love of cricket strategy and team selection debates. All data is publicly available and for entertainment only.</p>
+        <p style="margin-top: 20px;">© 2026 BowledByHer | A Niroar Tech Project</p>
+    </div>
+
+    <!-- ELEGANT BACK BUTTON -->
+    <div class="back-button-container">
+        <a href="index.html" class="back-to-home">
+            <i class="fas fa-arrow-left"></i> Back to BowledByHer
+            <i class="fas fa-cricket-bat-ball" style="margin-left: 8px;"></i>
+        </a>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="niroar-footer-zone" id="niroarFooter">
+    <div class="niroar-light-orb" id="niroarCursor"></div>
+    <div class="niroar-depth-layer"></div>
+    <div class="niroar-content-core">
+        <div class="niroar-powered-line">POWERED BY</div>
+        <!-- LOGO -->
+        <div class="niroar-logo-frame">
+            <img src="Niroarlogo.png" class="niroar-emblem" alt="Niroar Logo">
+        </div>
+        <!-- TAGLINE -->
+        <div class="niroar-tagline-text">— Roar Into Action —</div>
+        <!-- MARQUEE -->
+        <div class="niroar-marquee-wrap">
+            <div class="niroar-track-line">
+                <span class="niroar-scroll-item">- Architecting the systems that define what comes next -</span>
+                <span class="niroar-scroll-item">- Transforming complex ideas into scalable intelligent systems -</span>
+                <span class="niroar-scroll-item">- Engineering solutions that push beyond conventional limits -</span>
+                <span class="niroar-scroll-item">- Establishing new standards through precision and innovation -</span>
+            </div>
+        </div>
+    </div>
+    <div class="niroar-divider-line"></div>
+    <div class="niroar-copy-note">
+        © 2026 BOWLEDBYHER™ • ALL RIGHTS RESERVED •
+    </div>
+</footer>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate cards on scroll
+    gsap.utils.toArray('.card').forEach((card, index) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 40,
+            duration: 0.7,
+            delay: index * 0.08,
+            ease: 'power2.out'
+        });
+    });
+
+    gsap.from('.header', { opacity: 0, y: -20, duration: 0.6 });
+    gsap.from('.disclaimer-section', {
+        scrollTrigger: { trigger: '.disclaimer-section', start: 'top 90%' },
+        opacity: 0,
+        scale: 0.98,
+        duration: 0.6
+    });
+    gsap.from('.back-button-container', {
+        scrollTrigger: { trigger: '.back-button-container', start: 'top 95%' },
+        opacity: 0,
+        y: 20,
+        duration: 0.5
+    });
+
+    // Logo hover effect
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('mouseenter', () => {
+            gsap.to(logo, { duration: 0.3, scale: 1.05, rotate: 2, ease: 'power1.out' });
+        });
+        logo.addEventListener('mouseleave', () => {
+            gsap.to(logo, { duration: 0.3, scale: 1, rotate: 0 });
+        });
+    }
+
+     const niroarFooter = document.getElementById("niroarFooter");
+    const niroarCursor = document.getElementById("niroarCursor");
+
+    if (niroarFooter && niroarCursor) {
+        niroarFooter.addEventListener("mousemove", (e) => {
+            const rect = niroarFooter.getBoundingClientRect();
+            niroarCursor.style.left = (e.clientX - rect.left) + "px";
+            niroarCursor.style.top = (e.clientY - rect.top) + "px";
+        });
+    }
+    
+</script>
+
+</body>
+</html>

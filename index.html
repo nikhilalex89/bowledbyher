@@ -1,0 +1,3151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0, user-scalable=yes">
+    <title>IPL 2026 Team Builder | BowledByHer | Powered by Niroar Tech</title>
+
+    <link rel="icon" type="image/png" sizes="256x256" href="bbhfav.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="bbhfav.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="bbhfav.png">
+    <link rel="shortcut icon" href="bbhfav.png">
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Free IPL 2026 team builder. Choose from 10 teams, drag players, set captain, add impact players. Download image. No login, no betting.">
+    <meta name="keywords" content="IPL 2026 team builder, playing XI creator, CSK, MI, RCB, KKR, SRH, DC, RR, PBKS, LSG, GT, cricket team selector">
+    <meta name="author" content="Nikhil Alex | Niroar Tech">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bowledbyher.online/bbh1.html">
+    <meta property="og:title" content="IPL 2026 Team Builder | BowledByHer">
+    <meta property="og:description" content="Free IPL 2026 team builder. Create your playing XI, download image, share with friends.">
+    <meta property="og:image" content="https://bowledbyher.online/og-image.jpg">
+    <meta property="og:site_name" content="BowledByHer">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IPL 2026 Team Builder | BowledByHer">
+    <meta name="twitter:description" content="Free IPL team builder. No login, no betting.">
+    <meta name="twitter:image" content="https://bowledbyher.online/og-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bowledbyher.online/bbh1.html">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========== TEAM-SPECIFIC NEO-DARK GRADIENTS ========== */
+        /* ========== TEAM-SPECIFIC NEO-DARK GRADIENTS ========== */
+body.csk {
+    --team-primary: #FFD700;
+    --team-secondary: #FFA500;
+    --team-accent: #FFB347;
+    --team-glow: rgba(255, 215, 0, 0.5);
+    --team-dark: #0a0a1a;
+    background: linear-gradient(135deg, #1a1500 0%, #2a2000 50%, #1a1500 100%);
+    position: relative;
+}
+body.csk::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 30% 40%, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.05) 50%, transparent 80%);
+    pointer-events: none;
+    z-index: 0;
+    animation: cskGlow 4s ease-in-out infinite;
+}
+@keyframes cskGlow { 
+    0%,100% { opacity: 0.6; background-size: 100% 100%; } 
+    50% { opacity: 1; background-size: 120% 120%; } 
+}
+
+body.mi {
+    --team-primary: #0078D7;
+    --team-secondary: #FFD700;
+    --team-accent: #FFE44D;
+    --team-glow: rgba(0, 120, 215, 0.6);
+    --team-dark: #0a121f;
+    background: linear-gradient(135deg, #0a1a3a 0%, #0d2a5a 50%, #0a1a3a 100%);
+}
+body.mi::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 70% 30%, rgba(255, 215, 0, 0.2) 0%, rgba(0, 120, 215, 0.15) 50%, transparent 80%);
+    pointer-events: none;
+    z-index: 0;
+    animation: miWave 4s ease-in-out infinite;
+}
+@keyframes miWave { 
+    0%,100% { transform: scale(1); opacity: 0.6; } 
+    50% { transform: scale(1.05); opacity: 0.9; } 
+}
+
+body.rcb {
+    --team-primary: #E31B23;
+    --team-secondary: #FF4D4D;
+    --team-accent: #FF6B6B;
+    --team-glow: rgba(227, 27, 35, 0.5);
+    --team-dark: #1a0a0a;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0f0f 50%, #3a0a0a 100%);
+}
+body.rcb::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 60% 50%, rgba(227, 27, 35, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: rcbFire 2s ease-in-out infinite;
+}
+@keyframes rcbFire { 
+    0%,100% { filter: brightness(1); } 
+    50% { filter: brightness(1.12); } 
+}
+
+body.kkr {
+    --team-primary: #8B5CF6;
+    --team-secondary: #FFD700;
+    --team-accent: #FF69B4;
+    --team-glow: rgba(139, 92, 246, 0.5);
+    --team-dark: #0f0a1a;
+    background: linear-gradient(135deg, #1a0f2e 0%, #2a1a4a 50%, #1a0f2e 100%);
+}
+body.kkr::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 40% 60%, rgba(255, 215, 0, 0.2) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: kkrPulse 3s ease-in-out infinite;
+}
+@keyframes kkrPulse { 
+    0%,100% { opacity: 0.5; } 
+    50% { opacity: 0.9; } 
+}
+
+body.srh {
+    --team-primary: #FF7F00;
+    --team-secondary: #FF9933;
+    --team-accent: #FFB347;
+    --team-glow: rgba(255, 127, 0, 0.5);
+    --team-dark: #1a0f0a;
+    background: linear-gradient(135deg, #1a0f0a 0%, #2a1a0f 50%, #3a1f0a 100%);
+}
+body.srh::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 127, 0, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: srhGlow 4s ease-in-out infinite;
+}
+@keyframes srhGlow { 
+    0%,100% { filter: brightness(1); } 
+    50% { filter: brightness(1.1); } 
+}
+
+body.dc {
+    --team-primary: #004C97;
+    --team-secondary: #E31B23;
+    --team-accent: #FF4D4D;
+    --team-glow: rgba(0, 76, 151, 0.5);
+    --team-dark: #0a121f;
+    background: linear-gradient(135deg, #0a121f 0%, #0f1a2a 50%, #1a1f2a 100%);
+}
+body.dc::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 55% 45%, rgba(227, 27, 35, 0.15) 0%, rgba(0, 76, 151, 0.15) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.rr {
+    --team-primary: #FF69B4;
+    --team-secondary: #FF85C1;
+    --team-accent: #FF9FBF;
+    --team-glow: rgba(255, 105, 180, 0.5);
+    --team-dark: #1a0f1a;
+    background: linear-gradient(135deg, #1a0f1a 0%, #2a152a 50%, #3a1a3a 100%);
+}
+body.rr::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 65% 35%, rgba(255, 105, 180, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.pbks {
+    --team-primary: #E31B23;
+    --team-secondary: #C0C0C0;
+    --team-accent: #FF4D4D;
+    --team-glow: rgba(227, 27, 35, 0.5);
+    --team-dark: #1a0a0a;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a1515 50%, #3a1a1a 100%);
+}
+body.pbks::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 45% 55%, rgba(192, 192, 192, 0.15) 0%, rgba(227, 27, 35, 0.15) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.lsg {
+    --team-primary: #FF6B00;
+    --team-secondary: #003B6F;
+    --team-accent: #FF8C42;
+    --team-glow: rgba(255, 107, 0, 0.5);
+    --team-dark: #0a121f;
+    background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0f1f3a 100%);
+}
+body.lsg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 35% 65%, rgba(255, 107, 0, 0.2) 0%, rgba(0, 59, 111, 0.15) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: lsgGlow 3s ease-in-out infinite;
+}
+@keyframes lsgGlow { 
+    0%,100% { opacity: 0.6; } 
+    50% { opacity: 0.9; } 
+}
+
+body.gt {
+    --team-primary: #00AEEF;
+    --team-secondary: #1C1C1C;
+    --team-accent: #FFD700;
+    --team-glow: rgba(0, 174, 239, 0.5);
+    --team-dark: #0a101a;
+    background: linear-gradient(135deg, #0a1628 0%, #0d1f3a 50%, #0a1628 100%);
+}
+body.gt::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 75% 25%, rgba(0, 174, 239, 0.2) 0%, rgba(28, 28, 28, 0.1) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+        
+        /* Floating Particles */
+        .neo-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .neo-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, var(--team-primary), transparent);
+            border-radius: 50%;
+            animation: floatNeo 12s infinite linear;
+            opacity: 0;
+        }
+        
+        @keyframes floatNeo {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            15% { opacity: 0.4; }
+            85% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
+        
+        /* ========== NEO HEADER ========== */
+        .neo-header {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 60px;
+            padding: 20px 35px;
+            margin-bottom: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        
+        .logo-neo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-3d {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: logoNeoPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes logoNeoPulse {
+            0%,100% { box-shadow: 0 0 0 0 var(--team-glow); transform: scale(1); }
+            50% { box-shadow: 0 0 0 15px rgba(0,0,0,0); transform: scale(1.05); }
+        }
+        
+        .logo-3d i { font-size: 38px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        
+        .brand-neo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'Bebas Neue', cursive;
+            color: white;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .brand-neo p { font-size: 0.75rem; color: rgba(255,255,255,0.8); letter-spacing: 3px; }
+        
+        /* ========== REVOLUTIONARY TEAM SELECTOR - NO SCROLLBAR ========== */
+        .team-selector-neo {
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .selector-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.8);
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .team-floating-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            perspective: 1000px;
+        }
+        
+        .team-neo-card {
+            position: relative;
+            width: 115px;
+            padding: 18px 12px;
+            background: rgba(10,10,20,0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 1px solid rgba(255,255,255,0.1);
+            transform-style: preserve-3d;
+        }
+        
+        .team-neo-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 25px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--team-primary), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .team-neo-card:hover {
+            transform: translateY(-12px) translateZ(20px) scale(1.05);
+            background: rgba(20,20,40,0.8);
+        }
+        
+        .team-neo-card:hover::before {
+            opacity: 1;
+        }
+        
+        .team-neo-card.active {
+            transform: translateY(-8px) translateZ(15px);
+            border: 2px solid var(--team-primary);
+            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(0,0,0,0.3));
+            box-shadow: 0 0 35px var(--team-glow);
+        }
+        
+        .team-logo-neo {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+            font-weight: 800;
+            font-family: 'Bebas Neue', cursive;
+            transition: all 0.3s;
+        }
+        
+        .team-neo-card:hover .team-logo-neo {
+            transform: scale(1.08) rotateY(10deg);
+        }
+        
+        .team-name-neo {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: white;
+        }
+        
+        .team-logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.team-logo-img {
+    filter: drop-shadow(0 0 8px var(--team-primary));
+}
+        /* ========== MAIN GRID ========== */
+        
+        /* ========== PLAYER POOL & PLAYING 11 RESPONSIVE STYLES ONLY ========== */
+/* No JavaScript changes - CSS only solution */
+
+/* Keep two columns layout on all devices */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Base styles */
+.neo-card {
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.card-body-neo {
+    padding: 20px 24px;
+}
+
+/* Players Pool & Playing XI Slots */
+.players-scroll-neo,
+.slots-neo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Player Card & Slot Card - Same styling */
+.player-neo-card,
+.slot-neo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 65px;
+    transition: all 0.3s ease;
+}
+
+.slot-neo {
+    border: 2px dashed rgba(255,255,255,0.2);
+}
+
+.slot-neo.filled {
+    border: 2px solid var(--team-primary);
+    background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(0,0,0,0.1));
+}
+
+/* Slot number styling - visible on desktop */
+.slot-number-neo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--team-primary);
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+    background: none;
+}
+
+/* Avatar images */
+.player-avatar-neo,
+.slot-content-neo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Text containers */
+.player-info-neo,
+.slot-player-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Player Name - Full visibility */
+.player-name-neo,
+.slot-player-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    display: block;
+}
+
+/* Role text */
+.player-role-neo,
+.slot-player-detail {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 3px;
+    display: block;
+}
+
+/* Badge styling */
+.badge-neo {
+    padding: 4px 10px;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.badge-indian-neo {
+    background: linear-gradient(135deg, #2ECC71, #27AE60);
+}
+
+.badge-foreign-neo {
+    background: linear-gradient(135deg, #FF6B35, #FF3B1A);
+}
+
+/* Remove button */
+.remove-slot-neo {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--team-primary);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.remove-slot-neo:hover {
+    background: rgba(255,107,53,0.2);
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* Empty slot styling */
+.slot-neo:not(.filled) .slot-content-neo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.slot-neo:not(.filled) .slot-content-neo i {
+    font-size: 0.9rem;
+}
+
+/* Slot content wrapper */
+.slot-content-neo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+/* Stats section */
+.stats-neo {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-neo-card {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    border-radius: 25px;
+}
+
+.stat-number-neo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--team-primary);
+    font-family: 'Orbitron', monospace;
+}
+
+.stat-label-neo {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Impact Players */
+.impact-grid-neo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.impact-slot-neo {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.impact-slot-neo.filled {
+    border: 1px solid var(--team-primary);
+    background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(0,0,0,0.1));
+}
+
+/* Captain & Vice Captain - Vertical */
+.captain-neo {
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+    display: flex;
+}
+
+.captain-select-neo {
+    width: 100%;
+}
+
+.captain-select-neo label {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+    display: block;
+    color: rgba(255,255,255,0.7);
+}
+
+.captain-select-neo select {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Buttons - Vertical */
+.action-neo {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.btn-neo {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary-neo {
+    background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+    color: #000;
+}
+
+.btn-secondary-neo {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Search and filters */
+.search-neo {
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.search-neo input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    width: 160px;
+    font-size: 0.8rem;
+}
+
+.filter-neo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-neo-btn {
+    padding: 6px 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.75rem;
+}
+
+.filter-neo-btn.active {
+    background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+    border-color: transparent;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Legends button */
+.legends-neo-btn {
+    padding: 10px;
+    font-size: 0.8rem;
+    margin-top: 18px;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(0,0,0,0.2));
+    border: 1px solid var(--team-primary);
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Desktop Large */
+@media (max-width: 1400px) {
+    .main-grid {
+        gap: 25px;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .main-grid {
+        gap: 20px;
+    }
+    
+    .player-name-neo,
+    .slot-player-name {
+        font-size: 0.85rem;
+    }
+    
+    .player-avatar-neo,
+    .slot-content-neo img {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .player-neo-card,
+    .slot-neo {
+        padding: 7px 12px;
+        min-height: 60px;
+    }
+}
+
+/* Tablet Landscape - HIDE NUMBERS ON TABLET AND BELOW */
+@media (max-width: 992px) {
+    .main-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+    
+    .card-body-neo {
+        padding: 16px 18px;
+    }
+    
+    .player-name-neo,
+    .slot-player-name {
+        font-size: 0.8rem;
+    }
+    
+    .player-role-neo,
+    .slot-player-detail {
+        font-size: 0.65rem;
+    }
+    
+    .badge-neo {
+        padding: 3px 8px;
+        font-size: 0.55rem;
+    }
+    
+    .player-avatar-neo,
+    .slot-content-neo img {
+        width: 34px;
+        height: 34px;
+    }
+    
+    /* HIDE SLOT NUMBER ON TABLET AND MOBILE */
+    .slot-neo.filled .slot-number-neo {
+        display: none;
+    }
+    
+    /* Show number only for empty slots */
+    .slot-number-neo {
+        width: 24px;
+        font-size: 0.9rem;
+    }
+    
+    .player-neo-card,
+    .slot-neo {
+        padding: 6px 10px;
+        gap: 10px;
+        min-height: 56px;
+    }
+    
+    .stat-number-neo {
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 850px) {
+    .main-grid {
+        gap: 15px;
+    }
+    
+    .player-name-neo,
+    .slot-player-name {
+        font-size: 0.75rem;
+    }
+    
+    .player-role-neo,
+    .slot-player-detail {
+        font-size: 0.6rem;
+    }
+    
+    .badge-neo {
+        padding: 2px 7px;
+        font-size: 0.5rem;
+    }
+    
+    .player-avatar-neo,
+    .slot-content-neo img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .slot-number-neo {
+        width: 22px;
+        font-size: 0.85rem;
+    }
+    
+    .player-neo-card,
+    .slot-neo {
+        padding: 5px 8px;
+        gap: 8px;
+        min-height: 52px;
+        border-radius: 16px;
+    }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+    .main-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .card-body-neo {
+        padding: 14px 14px;
+    }
+    
+    .player-name-neo,
+    .slot-player-name {
+        font-size: 0.7rem;
+    }
+    
+    .player-role-neo,
+    .slot-player-detail {
+        font-size: 0.55rem;
+    }
+    
+    .badge-neo {
+        padding: 2px 6px;
+        font-size: 0.45rem;
+    }
+    
+    .player-avatar-neo,
+    .slot-content-neo img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .slot-number-neo {
+        width: 20px;
+        font-size: 0.8rem;
+    }
+    
+    .player-neo-card,
+    .slot-neo {
+        padding: 4px 6px;
+        gap: 8px;
+        min-height: 48px;
+        border-radius: 14px;
+    }
+    
+    .remove-slot-neo {
+        padding: 4px;
+        font-size: 0.7rem;
+    }
+    
+    .stat-number-neo {
+        font-size: 1.1rem;
+    }
+    
+    .stat-label-neo {
+        font-size: 0.5rem;
+    }
+    
+    .impact-slot-neo {
+        min-width: 70px;
+        padding: 6px;
+        font-size: 0.55rem;
+    }
+    
+    .captain-neo {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .action-neo {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-neo {
+        width: 100%;
+    }
+}
+
+/* Mobile Medium */
+@media (max-width: 650px) {
+    .main-grid {
+        gap: 10px;
+    }
+    
+    .player-name-neo,
+    .slot-player-name {
+        font-size: 0.65rem;
+    }
+    
+    .player-role-neo,
+    .slot-player-detail {
+        font-size: 0.5rem;
+    }
+    
+    .badge-neo {
+        padding: 1px 5px;
+        font-size: 0.4rem;
+    }
+    
+    .player-avatar-neo,
+    .slot-content-neo img {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .player-neo-card,
+    .slot-neo {
+        min-height: 46px;
+    }
+}
+
+/* Mobile Small - Keep side by side */
+@media (max-width: 550px) {
+    .main-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    .card-header-neo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+    }
+    
+    .card-body-neo {
+        padding: 12px;
+    }
+    
+    .search-neo {
+        width: 100%;
+    }
+    
+    .search-neo input {
+        width: 100%;
+    }
+    
+    .player-name-neo,
+    .slot-player-name {
+        font-size: 0.6rem;
+    }
+    
+    .player-role-neo,
+    .slot-player-detail {
+        font-size: 0.45rem;
+    }
+    
+    .badge-neo {
+        padding: 1px 4px;
+        font-size: 0.35rem;
+    }
+    
+    .player-avatar-neo,
+    .slot-content-neo img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .slot-number-neo {
+        width: 18px;
+        font-size: 0.7rem;
+    }
+    
+    .player-neo-card,
+    .slot-neo {
+        padding: 3px 5px;
+        gap: 6px;
+        min-height: 42px;
+        border-radius: 12px;
+    }
+}
+
+/* Scrollbar styling */
+.players-scroll-neo::-webkit-scrollbar,
+.main-grid .neo-card:nth-child(2)::-webkit-scrollbar {
+    width: 4px;
+}
+
+.players-scroll-neo::-webkit-scrollbar-track,
+.main-grid .neo-card:nth-child(2)::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+.players-scroll-neo::-webkit-scrollbar-thumb,
+.main-grid .neo-card:nth-child(2)::-webkit-scrollbar-thumb {
+    background: var(--team-primary);
+    border-radius: 10px;
+}
+
+/* Right panel scrollable */
+.main-grid .neo-card:nth-child(2) {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+    .main-grid .neo-card:nth-child(2) {
+        max-height: 500px;
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Fix overflow issues */
+.neo-card {
+    overflow: hidden;
+}
+
+.card-body-neo {
+    overflow-x: hidden;
+}
+
+/* Ensure badges don't merge with names */
+.player-neo-card {
+    flex-wrap: nowrap;
+}
+
+.badge-neo {
+    margin-left: auto;
+}
+
+/* Captain and VC select dropdowns on mobile */
+@media (max-width: 768px) {
+    .captain-select-neo select {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .captain-select-neo label {
+        font-size: 0.6rem;
+    }
+}
+        
+        
+        
+        /* ========== NEO CARDS ========== */
+        .neo-card {
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(20px);
+            border-radius: 35px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+        
+        .neo-card:hover {
+            transform: translateZ(15px);
+            border-color: var(--team-primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-header-neo {
+            padding: 20px 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .card-header-neo h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Orbitron', monospace;
+            color: white;
+        }
+        
+        .card-body-neo { padding: 20px 25px; }
+        
+        /* Search */
+        .search-neo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.08);
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .search-neo:focus-within {
+            border-color: var(--team-primary);
+            box-shadow: 0 0 20px var(--team-glow);
+        }
+        
+        .search-neo input {
+            background: none;
+            border: none;
+            color: white;
+            outline: none;
+            width: 160px;
+        }
+        
+        /* Filter Tabs */
+        .filter-neo {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        
+        .filter-neo-btn {
+            padding: 6px 20px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.8rem;
+        }
+        
+        .filter-neo-btn.active {
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            border-color: transparent;
+            box-shadow: 0 0 15px var(--team-glow);
+            color: #000;
+            font-weight: 600;
+        }
+        
+        /* Players */
+        .players-scroll-neo {
+             display: flex;
+    flex-direction: column;
+    gap: 10px;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .player-neo-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 16px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 25px;
+            cursor: grab;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        
+        .player-neo-card:active { cursor: grabbing; }
+        .player-neo-card.dragging { opacity: 0.5; }
+        
+        .player-neo-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--team-primary);
+            transform: translateX(6px);
+        }
+        
+        .player-avatar-neo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--team-primary);
+        }
+        
+        .player-info-neo { flex: 1; }
+        .player-name-neo { font-weight: 600; font-size: 0.9rem; color: white; }
+        .player-role-neo { font-size: 0.7rem; color: rgba(255,255,255,0.6); }
+        
+        .badge-neo {
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .badge-indian-neo { background: linear-gradient(135deg, #2ECC71, #27AE60); }
+        .badge-foreign-neo { background: linear-gradient(135deg, #FF6B35, #FF3B1A); }
+        
+        /* Team Slots */
+        .slots-neo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .main-grid .neo-card:nth-child(2) {
+    position: sticky;
+    top: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+        .slot-neo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 16px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 25px;
+            border: 2px dashed rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .slot-neo.filled {
+            border: 2px solid var(--team-primary);
+            background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(0,0,0,0.1));
+        }
+        
+        .slot-neo.drag-over {
+            border-color: var(--team-primary);
+            background: rgba(255,215,0,0.1);
+            transform: scale(1.01);
+        }
+        
+        .slot-number-neo {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #000;
+        }
+        
+        .slot-content-neo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .slot-content-neo img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .remove-slot-neo {
+            background: none;
+            border: none;
+            color: var(--team-primary);
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .remove-slot-neo:hover {
+            background: rgba(255,107,53,0.2);
+            transform: scale(1.2) rotate(90deg);
+        }
+        
+        /* Stats */
+        .stats-neo {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-neo-card {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            padding: 12px;
+            border-radius: 25px;
+            text-align: center;
+        }
+        
+        .stat-number-neo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--team-primary);
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .stat-label-neo { font-size: 0.65rem; color: rgba(255,255,255,0.6); }
+        
+        /* Impact */
+      /* Impact Player - Now uses team color */
+.impact-neo {
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.impact-neo::before {
+    content: 'IMPACT';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--team-primary);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 12px;
+    border-radius: 20px;
+}
+
+.impact-slot-neo.filled {
+    border: 1px solid var(--team-primary);
+    background: linear-gradient(135deg, rgba(var(--team-primary-rgb), 0.08), rgba(0,0,0,0.1));
+}
+        .impact-grid-neo {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .impact-slot-neo {
+            flex: 1;
+            min-width: 110px;
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px dashed rgba(255,255,255,0.2);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .impact-slot-neo.filled {
+            border: 1px solid var(--team-primary);
+            background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(0,0,0,0.1));
+        }
+        
+        .impact-slot-neo.drag-over-impact {
+            border-color: var(--team-primary);
+            background: rgba(255,215,0,0.15);
+            transform: scale(1.02);
+        }
+        
+        /* Captain */
+        .captain-neo {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .captain-select-neo { flex: 1; }
+        .captain-select-neo label { font-size: 0.7rem; color: rgba(255,255,255,0.6); margin-bottom: 6px; display: block; }
+        .captain-select-neo select {
+            width: 100%;
+            padding: 10px 16px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+        }
+        .captain-select-neo select:focus {
+            outline: none;
+            border-color: var(--team-primary);
+            box-shadow: 0 0 15px var(--team-glow);
+        }
+        
+        /* Buttons */
+        .action-neo {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn-neo {
+            flex: 1;
+            padding: 12px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .btn-primary-neo {
+            background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+            color: #000;
+        }
+        
+        .btn-secondary-neo {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .btn-neo:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.05);
+            box-shadow: 0 0 25px var(--team-glow);
+        }
+        
+        /* Legends */
+        .legends-neo-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(0,0,0,0.2));
+            border: 1px solid var(--team-primary);
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .legends-neo-btn:hover {
+            background: rgba(255,215,0,0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px var(--team-glow);
+        }
+        
+        .legends-panel-neo {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 25px;
+        }
+        
+        .legends-panel-neo.show { display: block; animation: fadeUp 0.4s ease; }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Toast */
+        .toast-neo {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            padding: 12px 28px;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 60px;
+            color: white;
+            z-index: 1000;
+            transition: all 0.3s;
+            border-left: 4px solid var(--team-primary);
+        }
+        .toast-neo.show { transform: translateX(-50%) translateY(0); }
+        
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--team-primary); border-radius: 10px; }
+
+        .niroar-body-shell{
+    margin:0;
+    height:200vh;
+    background:#0b0b0b;
+    font-family:monospace;
+}
+
+/* ===== FOOTER CORE ===== */
+.niroar-footer-zone{
+    position:relative;
+    background:#000;
+    padding:120px 40px 70px;
+    overflow:hidden;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== CURSOR GLOW ===== */
+.niroar-light-orb{
+    position:absolute;
+    width:340px;
+    height:340px;
+    background:radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+    border-radius:50%;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:2;
+}
+
+/* ===== DEPTH LAYER ===== */
+.niroar-depth-layer{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 60%);
+    transform:perspective(900px) rotateX(55deg);
+    opacity:0;
+    transition:0.6s ease;
+}
+
+/* ===== CONTENT WRAP ===== */
+.niroar-content-core{
+    position:relative;
+    z-index:3;
+    text-align:center;
+}
+
+/* ===== POWER TEXT ===== */
+.niroar-powered-line{
+    color:rgba(255,255,255,0.85);
+    letter-spacing:6px;
+    font-size:0.7rem;
+    margin-bottom:45px;
+}
+
+/* ===== LOGO HOLDER ===== */
+.niroar-logo-frame{
+    position:relative;
+    width:260px;
+    margin:auto;
+}
+
+/* SHEEN EFFECT */
+.niroar-logo-frame::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+    transform:skewX(-20deg);
+    opacity:0;
+}
+
+/* LOGO STYLE */
+.niroar-emblem{
+    width:100%;
+    transition:0.4s ease;
+    filter:
+        grayscale(100%)
+        brightness(0.55)
+        drop-shadow(0 0 8px rgba(255,255,255,0.1));
+}
+
+/* HOVER EFFECT */
+.niroar-logo-frame:hover .niroar-emblem{
+    transform:scale(1.08);
+    filter:
+        grayscale(0%)
+        brightness(1.3)
+        drop-shadow(0 0 30px rgba(255,255,255,0.9))
+        drop-shadow(0 0 70px rgba(255,255,255,0.4));
+}
+
+/* SHEEN ANIMATION */
+.niroar-logo-frame:hover::after{
+    animation:niroar-sheen-move 1s ease forwards;
+    opacity:1;
+}
+
+@keyframes niroar-sheen-move{
+    from{left:-100%;}
+    to{left:130%;}
+}
+
+/* DEPTH ON HOVER */
+.niroar-logo-frame:hover ~ .niroar-depth-layer{
+    opacity:0.3;
+    transform:perspective(900px) rotateX(50deg) scale(1.05);
+}
+
+/* ===== TAGLINE ===== */
+.niroar-tagline-text{
+    margin-top:25px;
+    font-size:0.8rem;
+    letter-spacing:4px;
+    color:rgba(255,255,255,0.75);
+    transition:0.3s;
+}
+
+.niroar-logo-frame:hover + .niroar-tagline-text{
+    color:#ffffff;
+    letter-spacing:5px;
+}
+
+/* ===== MARQUEE ===== */
+.niroar-marquee-wrap{
+    margin-top:60px;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.niroar-track-line{
+    display:inline-block;
+    animation:niroar-scroll-flow 22s linear infinite;
+}
+
+.niroar-scroll-item{
+    padding:0 60px;
+    font-size:0.8rem;
+    letter-spacing:3px;
+    color:rgba(255,255,255,0.9);
+}
+
+@keyframes niroar-scroll-flow{
+    100%{transform:translateX(-50%);}
+}
+
+/* ===== DIVIDER ===== */
+.niroar-divider-line{
+    margin:75px auto 35px;
+    height:1px;
+    background:linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent);
+}
+
+/* ===== COPYRIGHT ===== */
+.niroar-copy-note{
+    text-align:center;
+    color:rgba(255,255,255,0.5);
+    font-size:0.7rem;
+    letter-spacing:2px;
+}
+
+/* Help Icon Styles */
+.help-icon-wrapper {
+    position: relative;
+}
+
+.help-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.help-icon i {
+    font-size: 24px;
+    color: var(--team-primary);
+    transition: all 0.3s;
+}
+
+.help-icon:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px var(--team-glow);
+}
+
+.help-icon:hover i {
+    transform: rotate(15deg);
+}
+
+.help-tooltip {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    pointer-events: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.help-icon:hover .help-tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: 50px;
+}
+
+/* Modal Styles - Add before the closing body tag styles */
+.help-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(15px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.help-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.help-modal-content {
+    background: rgba(10,10,20,0.95);
+    border-radius: 35px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    border: 2px solid var(--team-primary);
+    box-shadow: 0 0 50px var(--team-glow);
+    animation: slideUp 0.4s ease;
+}
+
+.help-modal-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,20,0.95);
+    border-radius: 35px 35px 0 0;
+}
+
+.help-modal-header h3 {
+    font-size: 1.5rem;
+    font-family: 'Orbitron', monospace;
+    color: var(--team-primary);
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close-modal-btn:hover {
+    transform: rotate(90deg);
+    color: var(--team-primary);
+}
+
+.help-modal-body {
+    padding: 25px;
+}
+
+.help-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.help-step:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(8px);
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--team-primary), var(--team-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #000;
+    font-family: 'Orbitron', monospace;
+    flex-shrink: 0;
+}
+
+.step-text {
+    flex: 1;
+}
+
+.step-text h4 {
+    color: white;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.step-text p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.video-container {
+    margin: 25px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--team-primary);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.rule-card {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border-left: 3px solid var(--team-primary);
+}
+
+.rule-card i {
+    font-size: 28px;
+    color: var(--team-primary);
+    margin-bottom: 10px;
+}
+
+.rule-card h5 {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.rule-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile: 80% zoom effect automatically */
+@media (max-width: 768px) {
+    body {
+        zoom: 0.8;
+        -moz-transform: scale(0.8);
+        -moz-transform-origin: top center;
+    }
+}
+
+/* Responsive */
+
+    </style>
+</head>
+<body class="csk">
+    <div class="neo-particles" id="neoParticles"></div>
+    
+    <div class="container">
+        <!-- Neo Header -->
+       <div class="neo-header">
+    <div class="logo-neo">
+        <div class="logo-3d">
+            <img src="bbhlogo.png" alt="BowledByHer Logo" class="main-logo">
+        </div>
+        <div class="brand-neo">
+            <h1>BOWLEDBYHER</h1>
+            <p>IPL 2026 • NIROAR TECH</p>
+        </div>
+    </div>
+
+    <!-- Help Icon - MOVED TO FAR RIGHT -->
+    <div class="help-icon-wrapper">
+        <div class="help-icon" id="helpIcon">
+            <i class="fas fa-question-circle"></i>
+            <span class="help-tooltip">How to Play</span>
+        </div>
+    </div>
+</div>
+
+            
+        </div>
+        
+        <!-- Revolutionary Team Selector - No Scrollbar, Floating Grid -->
+        <div class="team-selector-neo">
+            <div class="selector-title">⚡ CHOOSE YOUR FRANCHISE ⚡</div>
+            <div class="team-floating-grid" id="teamFloatingGrid"></div>
+        </div>
+        
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Players Panel -->
+            <div class="neo-card">
+                <div class="card-header-neo">
+                    <h2><i class="fas fa-users"></i> PLAYERS POOL</h2>
+                    <div class="search-neo">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search player...">
+                    </div>
+                </div>
+                <div class="card-body-neo">
+                    <div class="filter-neo" id="filterTabs">
+                        <button class="filter-neo-btn active" data-cat="all">ALL</button>
+                        <button class="filter-neo-btn" data-cat="Batsman">🏏 BAT</button>
+                        <button class="filter-neo-btn" data-cat="All-Rounder">⚡ AR</button>
+                        <button class="filter-neo-btn" data-cat="Wicket Keeper">🧤 WK</button>
+                        <button class="filter-neo-btn" data-cat="Bowler">🎯 BOWL</button>
+                    </div>
+                    <div class="players-scroll-neo" id="playersList"></div>
+                    <button class="legends-neo-btn" id="legendsBtn">
+                        <i class="fas fa-crown"></i> ICONIC LEGENDS
+                    </button>
+                    <div class="legends-panel-neo" id="legendsPanel">
+                        <div id="legendsList"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Panel -->
+            <div class="neo-card">
+                <div class="card-header-neo">
+                    <h2><i class="fas fa-trophy"></i> YOUR PLAYING XI</h2>
+                </div>
+                <div class="card-body-neo">
+                    <div class="stats-neo">
+                        <div class="stat-neo-card">
+                            <div class="stat-number-neo" id="totalCount">0</div>
+                            <div class="stat-label-neo">PLAYERS</div>
+                        </div>
+                        <div class="stat-neo-card">
+                            <div class="stat-number-neo" id="foreignCount">0</div>
+                            <div class="stat-label-neo">✈️ FOREIGN</div>
+                        </div>
+                        <div class="stat-neo-card">
+                            <div class="stat-number-neo" id="indianCount">0</div>
+                            <div class="stat-label-neo">🇮🇳 INDIAN</div>
+                        </div>
+                    </div>
+                    
+                    <div class="slots-neo" id="teamSlots"></div>
+                    
+                    <div class="impact-neo">
+                        <div class="impact-title-neo" style="display:flex; align-items:center; gap:8px; margin-bottom:15px; color:var(--team-primary);">
+                            <i class="fas fa-bolt"></i> IMPACT PLAYERS (MAX 5)
+                        </div>
+                        <div class="impact-grid-neo" id="impactGrid"></div>
+                    </div>
+                    
+                    <div class="captain-neo">
+                        <div class="captain-select-neo">
+                            <label><i class="fas fa-crown"></i> CAPTAIN (C)</label>
+                            <select id="captainSelect">
+                                <option value="">SELECT CAPTAIN</option>
+                            </select>
+                        </div>
+                        <div class="captain-select-neo">
+                            <label><i class="fas fa-star"></i> VICE CAPTAIN (VC)</label>
+                            <select id="vcSelect">
+                                <option value="">SELECT VICE CAPTAIN</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="action-neo">
+                        <button class="btn-neo btn-primary-neo" id="submitBtn">
+                            <i class="fas fa-save"></i> SAVE & SHARE
+                        </button>
+                        <button class="btn-neo btn-secondary-neo" id="resetBtn">
+                            <i class="fas fa-undo"></i> RESET
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast-neo" id="toast"></div>
+
+    <!-- Help Modal -->
+<div class="help-modal" id="helpModal">
+    <div class="help-modal-content">
+        <div class="help-modal-header">
+            <h3><i class="fas fa-question-circle"></i> How to Build Your Dream Team</h3>
+            <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="help-modal-body">
+            <!-- Video Section -->
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="How to use BowledByHer"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <!-- Steps -->
+            <div class="help-step">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                    <h4>Choose Your Franchise</h4>
+                    <p>Click on any of the 10 IPL team cards at the top. Each team has its own unique color theme, players pool, and legendary icons!</p>
+                </div>
+            </div>
+            
+            <div class="help-step">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                    <h4>Build Your Playing XI</h4>
+                    <p>Drag & drop players from the left panel into the 11 slots on the right. You can also tap and drag on mobile devices! Each position matters - openers, middle order, finishers, and bowlers.</p>
+                </div>
+            </div>
+            
+            <div class="help-step">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                    <h4>Add Impact Players</h4>
+                    <p>You can select up to 5 impact players who can substitute during the match. Just drag any player to the Impact Players section below the main XI.</p>
+                </div>
+            </div>
+            
+            <div class="help-step">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                    <h4>Select Captain & Vice Captain</h4>
+                    <p>Choose your Captain and Vice Captain from the dropdown menus.</p>
+                </div>
+            </div>
+            
+            <div class="help-step">
+                <div class="step-number">5</div>
+                <div class="step-text">
+                    <h4>Save & Share</h4>
+                    <p>Click "SAVE & SHARE" to download your dream team image. You can download it, share on WhatsApp, Instagram or anywhere!</p>
+                </div>
+            </div>
+            
+            <!-- Rules Summary -->
+            <h4 style="color: var(--team-primary); margin: 25px 0 15px;"><i class="fas fa-list-check"></i> Key Rules</h4>
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <i class="fas fa-users"></i>
+                    <h5>11 Players</h5>
+                    <p>Exactly 11 players in your XI</p>
+                </div>
+                <div class="rule-card">
+                    <i class="fas fa-globe"></i>
+                    <h5>4 Foreigners Max</h5>
+                    <p>Maximum 4 overseas players</p>
+                </div>
+                <div class="rule-card">
+                    <i class="fas fa-glove"></i>
+                    <h5>1 WK Required</h5>
+                    <p>At least one wicket keeper</p>
+                </div>
+                <div class="rule-card">
+                    <i class="fas fa-bolt"></i>
+                    <h5>5 Impact Players</h5>
+                    <p>Choose only if needed, not mandatory</p>
+                </div>
+                <div class="rule-card">
+                    <i class="fas fa-crown"></i>
+                    <h5>Captain</h5>
+                    <p>Captain need to be selected</p>
+                </div>
+                <div class="rule-card">
+                    <i class="fas fa-star"></i>
+                    <h5>Vice Captain</h5>
+                    <p>Vice Captain need to be selected</p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,215,0,0.1); padding: 15px; border-radius: 15px; margin-top: 20px; text-align: center;">
+                <i class="fas fa-crown" style="color: gold;"></i>
+                <strong style="color: white;"> Pro Tip:</strong>
+                <span style="color: rgba(255,255,255,0.8);"> Check out the "ICONIC LEGENDS" section to add retired greats like Sachin Tendulkar, AB de Villiers, and Yuvraj Singh to your team!</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+    
+    <footer class="niroar-footer-zone" id="niroarFooter">
+
+    <div class="niroar-light-orb" id="niroarCursor"></div>
+    <div class="niroar-depth-layer"></div>
+
+    <div class="niroar-content-core">
+
+        <div class="niroar-powered-line">POWERED BY</div>
+
+        <!-- LOGO -->
+       <a href="niroarabout.html" style="text-decoration: none; display: block; width: fit-content; margin: 0 auto;">
+    <div class="niroar-logo-frame">
+        <img src="Niroarlogo.png" class="niroar-emblem">
+    </div>
+</a>
+
+        <!-- TAGLINE -->
+        <div class="niroar-tagline-text">
+            — Roar Into Action —
+        </div>
+
+        <!-- MARQUEE -->
+        <div class="niroar-marquee-wrap">
+            <div class="niroar-track-line">
+              <span class="niroar-scroll-item">- Architecting the systems that define what comes next -</span>
+<span class="niroar-scroll-item">- Transforming complex ideas into scalable intelligent systems -</span>
+<span class="niroar-scroll-item">- Engineering solutions that push beyond conventional limits -</span>
+<span class="niroar-scroll-item">- Establishing new standards through precision and innovation -</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="niroar-divider-line"></div>
+
+    <div class="niroar-copy-note">
+        © 2026 BOWLEDBYHER™ • ALL RIGHTS RESERVED • 
+    </div>
+
+</footer>
+    <script>
+        // ========== 10 IPL TEAMS DATA ==========
+       const teamsData = {
+    csk: {
+        name: "Chennai Super Kings",
+        short: "CSK",
+        logo: "csk.png",
+        colors: { primary: "#FFD700", secondary: "#FF8C00" },
+        players: [
+            { name: "Ruturaj Gaikwad", role: "Batsman", country: "India", img: "csk1.png" },
+            { name: "MS Dhoni", role: "Wicket Keeper", country: "India", img: "csk2.png" },
+            { name: "Sanju Samson", role: "Wicket Keeper", country: "India", img: "csk3.png" },
+            { name: "Dewald Brevis", role: "Batsman", country: "South Africa", img: "csk4.png" },
+            { name: "Ayush Mhatre", role: "Batsman", country: "India", img: "csk5.png" },
+            { name: "Kartik Sharma", role: "Wicket Keeper", country: "India", img: "csk6.png" },
+            { name: "Sarfaraz Khan", role: "Batsman", country: "India", img: "csk7.png" },
+            { name: "Urvil Patel", role: "Wicket Keeper", country: "India", img: "csk8.png" },
+            { name: "Shivam Dube", role: "All-Rounder", country: "India", img: "csk9.png" },
+            { name: "Jamie Overton", role: "All-Rounder", country: "England", img: "csk10.png" },
+            { name: "Ramakrishna Ghosh", role: "All-Rounder", country: "India", img: "csk11.png" },
+            { name: "Aman Khan", role: "All-Rounder", country: "India", img: "csk12.png" },
+            { name: "Matthew Short", role: "All-Rounder", country: "Australia", img: "csk13.png" },
+            { name: "Prashant Veer", role: "All-Rounder", country: "India", img: "csk14.png" },
+            { name: "Zak Foulkes", role: "All-Rounder", country: "New Zealand", img: "csk15.png" },
+            { name: "Noor Ahmad", role: "Bowler", country: "Afghanistan", img: "csk16.png" },
+            { name: "Khaleel Ahmed", role: "Bowler", country: "India", img: "csk17.png" },
+            { name: "Anshul Kamboj", role: "Bowler", country: "India", img: "csk18.png" },
+            { name: "Gurjapneet Singh", role: "Bowler", country: "India", img: "csk19.png" },
+            { name: "Shreyas Gopal", role: "Bowler", country: "India", img: "csk20.png" },
+            { name: "Mukesh Choudhary", role: "Bowler", country: "India", img: "csk21.png" },
+            { name: "Rahul Chahar", role: "Bowler", country: "India", img: "csk22.png" },
+            { name: "Akeal Hosein", role: "Bowler", country: "West Indies", img: "csk23.png" },
+            { name: "Matt Henry", role: "Bowler", country: "New Zealand", img: "csk24.png" },
+            { name: "Spencer Johnson", role: "Bowler", country: "Australia", img: "csk25.png" }
+        
+        ],
+        legends: [
+            { name: "Suresh Raina", role: "All-Rounder", country: "India", img: "csk26.png" }
+        ]
+    },
+    mi: {
+        name: "Mumbai Indians",
+        short: "MI",
+        logo: "mi.png",
+        colors: { primary: "#0055A4", secondary: "#FFD700" },
+        players: [
+            { name: "Rohit Sharma", role: "Batsman", country: "India", img: "mi1.jpg" },
+            { name: "Suryakumar Yadav", role: "Batsman", country: "India", img: "mi2.jpg" },
+            { name: "Tilak Varma", role: "Batsman", country: "India", img: "mi3.jpg" },
+            { name: "Sherfane Rutherford", role: "Batsman", country: "West Indies", img: "mi4.jpg" },
+            { name: "Danish Malewar", role: "Batsman", country: "India", img: "mi5.jpg" },
+            { name: "Quinton de Kock", role: "Wicket Keeper", country: "South Africa", img: "mi6.jpg" },
+            { name: "Ryan Rickelton", role: "Wicket Keeper", country: "South Africa", img: "mi7.jpg" },
+            { name: "Robin Minz", role: "Wicket Keeper", country: "India", img: "mi8.jpg" },
+            { name: "Hardik Pandya", role: "All-Rounder", country: "India", img: "mi9.jpg" },
+            { name: "Mitchell Santner", role: "All-Rounder", country: "New Zealand", img: "mi10.jpg" },
+            { name: "Will Jacks", role: "All-Rounder", country: "England", img: "mi11.jpg" },
+            { name: "Naman Dhir", role: "All-Rounder", country: "India", img: "mi12.jpg" },
+            { name: "Raj Angad Bawa", role: "All-Rounder", country: "India", img: "mi13.jpg" },
+            { name: "Atharva Ankolekar", role: "All-Rounder", country: "India", img: "mi14.jpg" },
+            { name: "Mayank Rawat", role: "All-Rounder", country: "India", img: "mi15.jpg" },
+            { name: "Corbin Bosch", role: "All-Rounder", country: "South Africa", img: "mi16.jpg" },
+            { name: "Shardul Thakur", role: "All-Rounder", country: "India", img: "mi17.jpg" },
+            { name: "Jasprit Bumrah", role: "Bowler", country: "India", img: "mi18.jpg" },
+            { name: "Trent Boult", role: "Bowler", country: "New Zealand", img: "mi19.jpg" },
+            { name: "Deepak Chahar", role: "Bowler", country: "India", img: "mi20.jpg" },
+            { name: "Mayank Markande", role: "Bowler", country: "India", img: "mi21.jpg" },
+            { name: "Allah Ghazanfar", role: "Bowler", country: "Afghanistan", img: "mi22.jpg" },
+            { name: "Ashwani Kumar", role: "Bowler", country: "India", img: "mi23.jpg" },
+            { name: "Raghu Sharma", role: "Bowler", country: "India", img: "mi24.jpg" },
+            { name: "Mohammad Izhar", role: "Bowler", country: "India", img: "mi25.jpg" }
+        ],
+        legends: [
+            { name: "Sachin Tendulkar", role: "Batsman", country: "India", img: "mi26.png" }
+        ]
+    },
+    rcb: {
+        name: "Royal Challengers Bangalore",
+        short: "RCB",
+        logo: "rcb.png",
+        colors: { primary: "#E31B23", secondary: "#FF4D4D" },
+        players: [
+            { name: "Virat Kohli", role: "Batsman", country: "India", img: "rcb1.png" },
+            { name: "Rajat Patidar", role: "Batsman", country: "India", img: "rcb2.png" },
+            { name: "Devdutt Padikkal", role: "Batsman", country: "India", img: "rcb3.png" },
+            { name: "Phil Salt", role: "Wicket Keeper", country: "England", img: "rcb4.png" },
+            { name: "Jitesh Sharma", role: "Wicket Keeper", country: "India", img: "rcb5.png" },
+            { name: "Jordan Cox", role: "Wicket Keeper", country: "England", img: "rcb6.png" },
+            { name: "Krunal Pandya", role: "All-Rounder", country: "India", img: "rcb7.png" },
+            { name: "Venkatesh Iyer", role: "All-Rounder", country: "India", img: "rcb8.png" },
+            { name: "Tim David", role: "All-Rounder", country: "Australia", img: "rcb9.png" },
+            { name: "Romario Shepherd", role: "All-Rounder", country: "West Indies", img: "rcb10.png" },
+            { name: "Jacob Bethell", role: "All-Rounder", country: "England", img: "rcb11.png" },
+            { name: "Swapnil Singh", role: "All-Rounder", country: "India", img: "rcb12.png" },
+            { name: "Satwik Deswal", role: "All-Rounder", country: "India", img: "rcb13.png" },
+            { name: "Mangesh Yadav", role: "All-Rounder", country: "India", img: "rcb14.png" },
+            { name: "Vihaan Malhotra", role: "All-Rounder", country: "India", img: "rcb15.png" },
+            { name: "Kanishk Chouhan", role: "All-Rounder", country: "India", img: "rcb16.png" },
+            { name: "Vikey Ostwal", role: "All-Rounder", country: "India", img: "rcb25.png" },
+            { name: "Josh Hazlewood", role: "Bowler", country: "Australia", img: "rcb17.png" },
+            { name: "Bhuvneshwar Kumar", role: "Bowler", country: "India", img: "rcb18.png" },
+            { name: "Yash Dayal", role: "Bowler", country: "India", img: "rcb19.png" },
+            { name: "Suyash Sharma", role: "Bowler", country: "India", img: "rcb20.png" },
+            { name: "Rasikh Dar", role: "Bowler", country: "India", img: "rcb21.png" },
+            { name: "Nuwan Thushara", role: "Bowler", country: "Sri Lanka", img: "rcb22.png" },
+            { name: "Abhinandan Singh", role: "Bowler", country: "India", img: "rcb23.png" },
+            { name: "Jacob Duffy", role: "Bowler", country: "New Zealand", img: "rcb24.png" }
+        ],
+        legends: [
+            { name: "AB de Villiers", role: "Wicket Keeper", country: "South Africa", img: "rcb26.png" }
+        ]
+    },
+    kkr: {
+        name: "Kolkata Knight Riders",
+        short: "KKR",
+        logo: "kkr.png",
+        colors: { primary: "#8B5CF6", secondary: "#FFD700" },
+        players: [
+  { name: "Ajinkya Rahane", role: "Batsman", country: "India", img: "kkr1.jpg" },
+  { name: "Rinku Singh", role: "Batsman", country: "India", img: "kkr2.jpg" },
+  { name: "Angkrish Raghuvanshi", role: "Batsman", country: "India", img: "kkr3.jpg" },
+  { name: "Manish Pandey", role: "Batsman", country: "India", img: "kkr4.jpg" },
+  { name: "Rahul Tripathi", role: "Batsman", country: "India", img: "kkr5.jpg" },
+  { name: "Rovman Powell", role: "Batsman", country: "West Indies", img: "kkr6.jpg" },
+  { name: "Finn Allen", role: "Wicket Keeper", country: "New Zealand", img: "kkr7.jpg" },
+  { name: "Tim Seifert", role: "Wicket Keeper", country: "New Zealand", img: "kkr8.jpg" },
+  { name: "Tejasvi Singh", role: "Wicket Keeper", country: "India", img: "kkr9.jpg" },
+  { name: "Sunil Narine", role: "All-Rounder", country: "West Indies", img: "kkr10.jpg" },
+  { name: "Anukul Roy", role: "All-Rounder", country: "India", img: "kkr11.jpg" },
+  { name: "Ramandeep Singh", role: "All-Rounder", country: "India", img: "kkr12.jpg" },
+  { name: "Cameron Green", role: "All-Rounder", country: "Australia", img: "kkr13.jpg" },
+  { name: "Rachin Ravindra", role: "All-Rounder", country: "New Zealand", img: "kkr14.jpg" },
+  { name: "Sarthak Ranjan", role: "All-Rounder", country: "India", img: "kkr15.jpg" },
+  { name: "Daksh Kamra", role: "All-Rounder", country: "India", img: "kkr16.jpg" },
+  { name: "Varun Chakravarthy", role: "Bowler", country: "India", img: "kkr17.jpg" },
+  { name: "Vaibhav Arora", role: "Bowler", country: "India", img: "kkr18.jpg" },
+  { name: "Umran Malik", role: "Bowler", country: "India", img: "kkr19.jpg" },
+  { name: "Matheesha Pathirana", role: "Bowler", country: "Sri Lanka", img: "kkr20.jpg" },
+  { name: "Blessing Muzarabani", role: "Bowler", country: "Zimbabwe", img: "kkr21.jpg" },
+  { name: "Navdeep Saini", role: "Bowler", country: "India", img: "kkr22.jpg" },
+  { name: "Kartik Tyagi", role: "Bowler", country: "India", img: "kkr23.jpg" },
+  { name: "Saurabh Dubey", role: "Bowler", country: "India", img: "kkr24.jpg" },
+  { name: "Prashant Solanki", role: "Bowler", country: "India", img: "kkr25.jpg" }
+    ],
+        legends: [
+            { name: "Gautam Gambhir", role: "Batsman", country: "India", img: "kkr26.png" }
+        ]
+    },
+    srh: {
+        name: "Sunrisers Hyderabad",
+        short: "SRH",
+        logo: "srh.png",
+        colors: { primary: "#FF7F00", secondary: "#FF9933" },
+        players: [
+    { name: "Ishan Kishan", role: "Wicket Keeper", country: "India", img: "srh1.png" },
+    { name: "Heinrich Klaasen", role: "Wicket Keeper", country: "South Africa", img: "srh2.png" },
+    { name: "Salil Arora", role: "Wicket Keeper", country: "India", img: "srh3.png" },
+    { name: "Travis Head", role: "Batsman", country: "Australia", img: "srh4.png" },
+    { name: "Aniket Verma", role: "Batsman", country: "India", img: "srh5.png" },
+    { name: "Smaran Ravichandran", role: "Batsman", country: "India", img: "srh6.png" },
+    { name: "Abhishek Sharma", role: "All-Rounder", country: "India", img: "srh7.png" },
+    { name: "Nitish Kumar Reddy", role: "All-Rounder", country: "India", img: "srh8.png" },
+    { name: "Harshal Patel", role: "All-Rounder", country: "India", img: "srh9.png" },
+    { name: "Kamindu Mendis", role: "All-Rounder", country: "Sri Lanka", img: "srh10.png" },
+    { name: "Harsh Dubey", role: "All-Rounder", country: "India", img: "srh11.png" },
+    { name: "Brydon Carse", role: "All-Rounder", country: "England", img: "srh12.png" },
+    { name: "Shivang Kumar", role: "All-Rounder", country: "India", img: "srh13.png" },
+    { name: "Liam Livingstone", role: "All-Rounder", country: "England", img: "srh14.png" },
+    { name: "David Payne", role: "All-Rounder", country: "England", img: "srh15.png" },
+    { name: "Pat Cummins", role: "Bowler", country: "Australia", img: "srh16.png" },
+    { name: "Jaydev Unadkat", role: "Bowler", country: "India", img: "srh17.png" },
+    { name: "Zeeshan Ansari", role: "Bowler", country: "India", img: "srh18.png" },
+    { name: "Eshan Malinga", role: "Bowler", country: "Sri Lanka", img: "srh19.png" },
+    { name: "Shivam Mavi", role: "Bowler", country: "India", img: "srh20.png" },
+    { name: "Sakib Hussain", role: "Bowler", country: "India", img: "srh21.png" },
+    { name: "Omkar Tarmale", role: "Bowler", country: "India", img: "srh22.png" },
+    { name: "Amit Kumar", role: "Bowler", country: "India", img: "srh23.png" },
+    { name: "Praful Hinge", role: "Bowler", country: "India", img: "srh24.png" },
+    { name: "Krains Fuletra", role: "Bowler", country: "India", img: "srh25.png" }
+],
+        legends: [
+            { name: "David Warner", role: "Batsman", country: "Australia", img: "srh26.png" }
+    ]
+    },
+    dc: {
+        name: "Delhi Capitals",
+        short: "DC",
+        logo: "dc.png",
+        colors: { primary: "#004C97", secondary: "#E31B23" },
+        players: [
+    // Wicket Keepers
+    { name: "KL Rahul", role: "Wicket Keeper", country: "India", img: "dc1.jpg" },
+    { name: "Tristan Stubbs", role: "Wicket Keeper", country: "South Africa", img: "dc2.jpg" },
+    { name: "Abishek Porel", role: "Wicket Keeper", country: "India", img: "dc3.jpg" },
+    { name: "David Miller", role: "Batsman", country: "South Africa", img: "dc4.jpg" },
+    { name: "Karun Nair", role: "Batsman", country: "India", img: "dc5.jpg" },
+    { name: "Nitish Rana", role: "Batsman", country: "India", img: "dc6.jpg" },
+    { name: "Pathum Nissanka", role: "Batsman", country: "Sri Lanka", img: "dc8.jpg" },
+    { name: "Prithvi Shaw", role: "Batsman", country: "India", img: "dc9.jpg" },
+    { name: "Sameer Rizvi", role: "Batsman", country: "India", img: "dc10.jpg" },
+    { name: "Sahil Parakh", role: "Batsman", country: "India", img: "dc11.jpg" },
+    { name: "Axar Patel", role: "All-Rounder", country: "India", img: "dc12.jpg" },
+    { name: "Ajay Mandal", role: "All-Rounder", country: "India", img: "dc13.jpg" },
+    { name: "Vipraj Nigam", role: "All-Rounder", country: "India", img: "dc14.jpg" },
+    { name: "Ashutosh Sharma", role: "All-Rounder", country: "India", img: "dc15.jpg" },
+    { name: "Madhav Tiwari", role: "All-Rounder", country: "India", img: "dc16.jpg" },
+    { name: "Tripurana Vijay", role: "All-Rounder", country: "India", img: "dc17.jpg" },
+    { name: "Kuldeep Yadav", role: "Bowler", country: "India", img: "dc18.jpg" },
+    { name: "Mukesh Kumar", role: "Bowler", country: "India", img: "dc19.jpg" },
+    { name: "Mitchell Starc", role: "Bowler", country: "Australia", img: "dc20.jpg" },
+    { name: "T Natarajan", role: "Bowler", country: "India", img: "dc21.jpg" },
+    { name: "Dushmantha Chameera", role: "Bowler", country: "Sri Lanka", img: "dc22.jpg" },
+    { name: "Lungisani Ngidi", role: "Bowler", country: "South Africa", img: "dc23.jpg" },
+    { name: "Kyle Jamieson", role: "Bowler", country: "New Zealand", img: "dc24.jpg" },
+    { name: "Auqib Nabi", role: "Bowler", country: "India", img: "dc7.jpg" }
+
+],
+        legends: [
+            { name: "Virender Sehwag", role: "Batsman", country: "India", img: "dc25.png" }
+        ]
+    },
+    rr: {
+        name: "Rajasthan Royals",
+        short: "RR",
+        logo: "rr.png",
+        colors: { primary: "#FF69B4", secondary: "#FF85C1" },
+        players: [
+    // Batters / WK
+    { name: "Yashasvi Jaiswal", role: "Batsman", country: "India", img: "rr1.jpg" },
+    { name: "Shimron Hetmyer", role: "Batsman", country: "West Indies", img: "rr2.jpg" },
+    { name: "Shubham Dubey", role: "Batsman", country: "India", img: "rr3.jpg" },
+    { name: "Vaibhav Suryavanshi", role: "Batsman", country: "India", img: "rr4.jpg" },
+    { name: "Aman Rao", role: "Batsman", country: "India", img: "rr5.jpg" },
+    { name: "Dhruv Jurel", role: "Wicket Keeper", country: "India", img: "rr6.jpg" },
+    { name: "Donovan Ferreira", role: "Wicket Keeper", country: "South Africa", img: "rr7.jpg" },
+    { name: "Lhuan-dre Pretorius", role: "Wicket Keeper", country: "South Africa", img: "rr8.jpg" },
+    { name: "Ravi Singh", role: "Wicket Keeper", country: "India", img: "rr9.jpg" },
+    { name: "Riyan Parag", role: "All-Rounder", country: "India", img: "rr10.jpg" },
+    { name: "Ravindra Jadeja", role: "All-Rounder", country: "India", img: "rr11.jpg" },
+    { name: "Dasun Shanaka", role: "All-Rounder", country: "Sri Lanka", img: "rr12.jpg" },
+    { name: "Yudhvir Singh Charak", role: "All-Rounder", country: "India", img: "rr13.jpg" },
+    { name: "Jofra Archer", role: "Bowler", country: "England", img: "rr14.jpg" },
+    { name: "Sandeep Sharma", role: "Bowler", country: "India", img: "rr15.jpg" },
+    { name: "Tushar Deshpande", role: "Bowler", country: "India", img: "rr16.jpg" },
+    { name: "Ravi Bishnoi", role: "Bowler", country: "India", img: "rr17.jpg" },
+    { name: "Nandre Burger", role: "Bowler", country: "South Africa", img: "rr18.jpg" },
+    { name: "Kwena Maphaka", role: "Bowler", country: "South Africa", img: "rr19.jpg" },
+    { name: "Kuldeep Sen", role: "Bowler", country: "India", img: "rr20.jpg" },
+    { name: "Sushant Mishra", role: "Bowler", country: "India", img: "rr21.jpg" },
+    { name: "Yash Raj Punja", role: "Bowler", country: "India", img: "rr22.jpg" },
+    { name: "Vignesh Puthur", role: "Bowler", country: "India", img: "rr23.jpg" },
+    { name: "Brijesh Sharma", role: "Bowler", country: "India", img: "rr24.jpg" },
+    { name: "Adam Milne", role: "Bowler", country: "New Zealand", img: "rr25.jpg" }
+],
+        legends: [
+            { name: "Shane Warne", role: "Bowler", country: "Australia", img: "rr26.png" }
+        ]
+    },
+    pbks: {
+        name: "Punjab Kings",
+        short: "PBKS",
+        logo: "pbks.png",
+        colors: { primary: "#D71920", secondary: "#A7A9AC" },
+        players: [
+    // Batters / WK
+    { name: "Shreyas Iyer", role: "Batsman", country: "India", img: "pbks1.jpg" },
+    { name: "Nehal Wadhera", role: "Batsman", country: "India", img: "pbks2.jpg" },
+    { name: "Harnoor Pannu", role: "Batsman", country: "India", img: "pbks3.jpg" },
+    { name: "Priyansh Arya", role: "Batsman", country: "India", img: "pbks4.jpg" },
+    { name: "Pyla Avinash", role: "Batsman", country: "India", img: "pbks5.jpg" },
+    { name: "Shashank Singh", role: "Batsman", country: "India", img: "pbks6.jpg" },
+    { name: "Prabhsimran Singh", role: "Wicket Keeper", country: "India", img: "pbks7.jpg" },
+    { name: "Vishnu Vinod", role: "Wicket Keeper", country: "India", img: "pbks8.jpg" },
+    { name: "Marcus Stoinis", role: "All-Rounder", country: "Australia", img: "pbks9.jpg" },
+    { name: "Marco Jansen", role: "All-Rounder", country: "South Africa", img: "pbks10.jpg" },
+    { name: "Azmatullah Omarzai", role: "All-Rounder", country: "Afghanistan", img: "pbks11.jpg" },
+    { name: "Harpreet Brar", role: "All-Rounder", country: "India", img: "pbks12.jpg" },
+    { name: "Musheer Khan", role: "All-Rounder", country: "India", img: "pbks13.jpg" },
+    { name: "Suryansh Shedge", role: "All-Rounder", country: "India", img: "pbks14.jpg" },
+    { name: "Mitchell Owen", role: "All-Rounder", country: "Australia", img: "pbks15.jpg" },
+    { name: "Cooper Connolly", role: "All-Rounder", country: "Australia", img: "pbks16.jpg" },
+    { name: "Arshdeep Singh", role: "Bowler", country: "India", img: "pbks17.jpg" },
+    { name: "Yuzvendra Chahal", role: "Bowler", country: "India", img: "pbks18.jpg" },
+    { name: "Lockie Ferguson", role: "Bowler", country: "New Zealand", img: "pbks19.jpg" },
+    { name: "Vijaykumar Vyshak", role: "Bowler", country: "India", img: "pbks20.jpg" },
+    { name: "Yash Thakur", role: "Bowler", country: "India", img: "pbks21.jpg" },
+    { name: "Xavier Bartlett", role: "Bowler", country: "Australia", img: "pbks22.jpg" },
+    { name: "Praveen Dubey", role: "Bowler", country: "India", img: "pbks23.jpg" },
+    { name: "Vishal Nishad", role: "Bowler", country: "India", img: "pbks24.jpg" },
+    { name: "Ben Dwarshuis", role: "Bowler", country: "Australia", img: "pbks25.jpg" }
+],
+        legends: [
+            { name: "Yuvraj Singh", role: "All-Rounder", country: "India", img: "pbks26.png" }
+        ]
+    },
+    lsg: {
+        name: "Lucknow Super Giants",
+        short: "LSG",
+        logo: "lsg.png",
+        colors: { primary: "#FF6B00", secondary: "#003B6F" },
+        players: [
+    // Wicket Keepers / Batters
+    { name: "Rishabh Pant", role: "Wicket Keeper", country: "India", img: "lsg1.jpg" },
+    { name: "Nicholas Pooran", role: "Wicket Keeper", country: "West Indies", img: "lsg2.jpg" },
+    { name: "Josh Inglis", role: "Wicket Keeper", country: "Australia", img: "lsg3.jpg" },
+    { name: "Mukul Choudhary", role: "Wicket Keeper", country: "India", img: "lsg4.jpg" },
+    { name: "Matthew Breetzke", role: "Wicket Keeper", country: "South Africa", img: "lsg5.jpg" },
+    { name: "Aiden Markram", role: "Batsman", country: "South Africa", img: "lsg6.jpg" },
+    { name: "Himmat Singh", role: "Batsman", country: "India", img: "lsg7.jpg" },
+    { name: "Akshat Raghuwanshi", role: "Batsman", country: "India", img: "lsg8.jpg" },
+    { name: "Mitchell Marsh", role: "All-Rounder", country: "Australia", img: "lsg9.jpg" },
+    { name: "Abdul Samad", role: "All-Rounder", country: "India", img: "lsg10.jpg" },
+    { name: "Shahbaz Ahmed", role: "All-Rounder", country: "India", img: "lsg11.jpg" },
+    { name: "Arshin Kulkarni", role: "All-Rounder", country: "India", img: "lsg12.jpg" },
+    { name: "Wanindu Hasaranga", role: "All-Rounder", country: "Sri Lanka", img: "lsg13.jpg" },
+    { name: "Ayush Badoni", role: "All-Rounder", country: "India", img: "lsg14.jpg" },
+    { name: "Mohammed Shami", role: "Bowler", country: "India", img: "lsg15.jpg" },
+    { name: "Avesh Khan", role: "Bowler", country: "India", img: "lsg16.jpg" },
+    { name: "Anrich Nortje", role: "Bowler", country: "South Africa", img: "lsg17.jpg" },
+    { name: "Mayank Yadav", role: "Bowler", country: "India", img: "lsg18.jpg" },
+    { name: "Mohsin Khan", role: "Bowler", country: "India", img: "lsg19.jpg" },
+    { name: "Akash Singh", role: "Bowler", country: "India", img: "lsg20.jpg" },
+    { name: "Prince Yadav", role: "Bowler", country: "India", img: "lsg21.jpg" },
+    { name: "Naman Tiwari", role: "Bowler", country: "India", img: "lsg22.jpg" },
+    { name: "Digvesh Rathi", role: "Bowler", country: "India", img: "lsg23.jpg" },
+    { name: "M Siddharth", role: "Bowler", country: "India", img: "lsg24.jpg" },
+    { name: "Arjun Tendulkar", role: "Bowler", country: "India", img: "lsg25.jpg" }
+], 
+
+legends: [
+            { name: "KL Rahul", role: "Wicket Keeper", country: "India", img: "lsg26.png" }
+        ]
+    },
+    gt: {
+        name: "Gujarat Titans",
+        short: "GT",
+        logo: "gt.png",
+        colors: { primary: "#00AEEF", secondary: "#1C1C1C" },
+        players: [
+    { name: "Shubman Gill", role: "Batsman", country: "India", img: "gt1.jpg" },
+    { name: "Sai Sudharsan", role: "Batsman", country: "India", img: "gt2.jpg" },
+    { name: "Shahrukh Khan", role: "Batsman", country: "India", img: "gt3.jpg" },
+    { name: "Jos Buttler", role: "Wicket Keeper", country: "England", img: "gt4.jpg" },
+    { name: "Anuj Rawat", role: "Wicket Keeper", country: "India", img: "gt5.jpg" },
+    { name: "Tom Banton", role: "Wicket Keeper", country: "England", img: "gt6.jpg" },
+    { name: "Kumar Kushagra", role: "Wicket Keeper", country: "India", img: "gt7.jpg" },
+    { name: "Rahul Tewatia", role: "All-Rounder", country: "India", img: "gt8.jpg" },
+    { name: "Rashid Khan", role: "All-Rounder", country: "Afghanistan", img: "gt9.jpg" },
+    { name: "Washington Sundar", role: "All-Rounder", country: "India", img: "gt10.jpg" },
+    { name: "Glenn Phillips", role: "All-Rounder", country: "New Zealand", img: "gt11.jpg" },
+    { name: "Jason Holder", role: "All-Rounder", country: "West Indies", img: "gt12.jpg" },
+    { name: "Arshad Khan", role: "All-Rounder", country: "India", img: "gt13.jpg" },
+    { name: "Nishant Sindhu", role: "All-Rounder", country: "India", img: "gt14.jpg" },
+    { name: "Mohammed Siraj", role: "Bowler", country: "India", img: "gt15.jpg" },
+    { name: "Kagiso Rabada", role: "Bowler", country: "South Africa", img: "gt16.jpg" },
+    { name: "Prasidh Krishna", role: "Bowler", country: "India", img: "gt17.jpg" },
+    { name: "Ishant Sharma", role: "Bowler", country: "India", img: "gt18.jpg" },
+    { name: "Sai Kishore", role: "Bowler", country: "India", img: "gt19.jpg" },
+    { name: "Jayant Yadav", role: "Bowler", country: "India", img: "gt20.jpg" },
+    { name: "Manav Suthar", role: "Bowler", country: "India", img: "gt21.jpg" },
+    { name: "Gurnoor Brar", role: "Bowler", country: "India", img: "gt22.jpg" },
+    { name: "Ashok Sharma", role: "Bowler", country: "India", img: "gt23.jpg" },
+    { name: "Kulwant Khejroliya", role: "Bowler", country: "India", img: "gt24.jpg" },
+    { name: "Luke Wood", role: "Bowler", country: "England", img: "gt25.jpg" }
+],
+
+legends: [
+            { name: "Hardik Pandya", role: "All-Rounder", country: "India", img: "gt26.png" }
+        ]
+    }
+};
+        
+        // Player Data
+        
+        
+        // ========== APP STATE ==========
+        let currentTeam = "csk";
+        let playingXI = new Array(11).fill(null);
+        let impactPlayers = [];
+        let captain = null;
+        let viceCaptain = null;
+        let currentFilter = "all";
+        let searchTerm = "";
+        
+        function setTheme(team) {
+            document.body.className = team;
+            const colors = teamsData[team].colors;
+            document.documentElement.style.setProperty('--team-primary', colors.primary);
+            document.documentElement.style.setProperty('--team-secondary', colors.secondary);
+        }
+        
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+        
+        function updateStats() {
+            const filled = playingXI.filter(p => p !== null).length;
+            const foreign = playingXI.filter(p => p && p.country !== "India").length;
+            document.getElementById('totalCount').textContent = filled;
+            document.getElementById('foreignCount').textContent = `${foreign}/4`;
+            document.getElementById('indianCount').textContent = playingXI.filter(p => p && p.country === "India").length;
+        }
+        
+        function updateCaptainOptions() {
+            const allPlayers = playingXI.filter(p => p);
+            const captainSelect = document.getElementById('captainSelect');
+            const vcSelect = document.getElementById('vcSelect');
+            captainSelect.innerHTML = '<option value="">SELECT CAPTAIN</option>';
+            vcSelect.innerHTML = '<option value="">SELECT VICE CAPTAIN</option>';
+            allPlayers.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.name;
+                opt.textContent = `${p.name} (${p.role})`;
+                captainSelect.appendChild(opt.cloneNode(true));
+                vcSelect.appendChild(opt);
+            });
+            if (captain) captainSelect.value = captain;
+            if (viceCaptain) vcSelect.value = viceCaptain;
+        }
+        
+        function renderTeamSlots() {
+            const container = document.getElementById('teamSlots');
+            const positions = ["OPENER 1", "OPENER 2", "NO. 3", "NO. 4", "NO. 5", "FINISHER", "ALL-ROUNDER", "BOWLER 1", "BOWLER 2", "BOWLER 3", "BOWLER 4"];
+            container.innerHTML = playingXI.map((player, idx) => {
+                if (player) {
+                    return `
+                        <div class="slot-neo filled" data-slot="${idx}">
+                            <div class="slot-number-neo">${idx + 1}</div>
+                            <div class="slot-content-neo">
+                                <img src="${player.img || 'https://via.placeholder.com/38'}" onerror="this.src='https://via.placeholder.com/38'">
+                                <div>
+                                    <div style="color:white; font-weight:500;">${player.name} ${captain === player.name ? '👑' : viceCaptain === player.name ? '⭐' : ''}</div>
+                                    <div style="font-size:0.7rem; color:rgba(255,255,255,0.6);">${player.role} • ${player.country === 'India' ? '🇮🇳' : '✈️'}</div>
+                                </div>
+                            </div>
+                            <button class="remove-slot-neo" onclick="removeFromSlot(${idx})"><i class="fas fa-times"></i></button>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="slot-neo" data-slot="${idx}">
+                            <div class="slot-number-neo">${idx + 1}</div>
+                            <div class="slot-content-neo">
+                                <div style="color: rgba(255,255,255,0.5);">${positions[idx]} <i class="fas fa-arrow-down"></i></div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
+            initDropTargets();
+        }
+        
+        function renderImpactSlots() {
+            const container = document.getElementById('impactGrid');
+            container.innerHTML = '';
+            for (let i = 0; i < 5; i++) {
+                const player = impactPlayers[i];
+                if (player) {
+                    container.innerHTML += `<div class="impact-slot-neo filled" data-impact-index="${i}"><div><strong>${player.name}</strong></div><div style="font-size:0.7rem;">${player.role}</div><div style="margin-top:5px;cursor:pointer;color:var(--team-primary);" onclick="removeFromImpact('${player.name}')"><i class="fas fa-times"></i></div></div>`;
+                } else {
+                    container.innerHTML += `<div class="impact-slot-neo" data-impact-index="${i}"><div><i class="fas fa-plus"></i> IMPACT ${i+1}</div><div style="font-size:0.7rem;">Drop here</div></div>`;
+                }
+            }
+            initImpactDropTargets();
+        }
+        
+       function renderPlayers() {
+    const team = teamsData[currentTeam];
+    let players = [...team.players];
+    
+    if (searchTerm) players = players.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    if (currentFilter !== 'all') players = players.filter(p => p.role === currentFilter);
+    
+    const selectedNames = [...playingXI.filter(p => p), ...impactPlayers].map(p => p.name);
+    players = players.filter(p => !selectedNames.includes(p.name));
+    
+    const container = document.getElementById('playersList');
+    container.innerHTML = players.map(p => `
+        <div class="player-neo-card" draggable="true" data-player='${JSON.stringify(p)}'>
+            <img class="player-avatar-neo" src="${p.img}" onerror="this.src='https://via.placeholder.com/50'">
+            <div class="player-info-neo">
+                <div class="player-name-neo">${p.name}</div>
+                <div class="player-role-neo">${p.role}</div>
+            </div>
+            <span class="badge-neo ${p.country === 'India' ? 'badge-indian-neo' : 'badge-foreign-neo'}">${p.country === 'India' ? '🇮🇳' : '✈️'}</span>
+        </div>
+    `).join('');
+    initDragSources();
+}
+        
+       function renderLegends() {
+    const team = teamsData[currentTeam];
+    const container = document.getElementById('legendsList');
+    const selectedNames = [...playingXI.filter(p => p), ...impactPlayers].map(p => p.name);
+    const legends = team.legends.filter(l => !selectedNames.includes(l.name));
+    
+    container.innerHTML = legends.map(l => `
+        <div class="player-neo-card" draggable="true" data-player='${JSON.stringify(l)}'>
+            <img class="player-avatar-neo" src="${l.img}" onerror="this.src='https://via.placeholder.com/50'">
+            <div class="player-info-neo">
+                <div class="player-name-neo">${l.name} <i class="fas fa-crown" style="color:gold;"></i></div>
+                <div class="player-role-neo">${l.role} • LEGEND</div>
+            </div>
+            <span class="badge-neo ${l.country === 'India' ? 'badge-indian-neo' : 'badge-foreign-neo'}">${l.country === 'India' ? '🇮🇳' : '✈️'}</span>
+        </div>
+    `).join('');
+    initDragSources();
+}
+        
+        function renderTeamSelector() {
+            const container = document.getElementById('teamFloatingGrid');
+            const teams = ['csk', 'mi', 'rcb', 'kkr', 'srh', 'dc', 'rr', 'pbks', 'lsg', 'gt'];
+            container.innerHTML = teams.map(t => `
+                <div class="team-neo-card ${currentTeam === t ? 'active' : ''}" data-team="${t}" onclick="selectTeam('${t}')" style="--team-primary: ${teamsData[t].colors.primary}; --team-secondary: ${teamsData[t].colors.secondary};">
+                    <div class="team-logo-neo" style="background: linear-gradient(135deg, ${teamsData[t].colors.primary}, ${teamsData[t].colors.secondary})">
+                        <img src="${teamsData[t].logo}" class="team-logo-img">
+                    </div>
+                    
+                    <div class="team-name-neo">${teamsData[t].short}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Drag & Drop
+        let draggedPlayer = null;
+        
+        function initDragSources() {
+            document.querySelectorAll('.player-neo-card[draggable="true"]').forEach(el => {
+                el.removeEventListener('dragstart', dragStart);
+                el.removeEventListener('dragend', dragEnd);
+                el.addEventListener('dragstart', dragStart);
+                el.addEventListener('dragend', dragEnd);
+                el.removeEventListener('touchstart', touchStart);
+                el.removeEventListener('touchmove', touchMove);
+                el.removeEventListener('touchend', touchEnd);
+                el.addEventListener('touchstart', touchStart, { passive: false });
+                el.addEventListener('touchmove', touchMove, { passive: false });
+                el.addEventListener('touchend', touchEnd);
+            });
+        }
+        
+        function dragStart(e) {
+            const card = e.target.closest('.player-neo-card');
+            if (card && card.dataset.player) {
+                draggedPlayer = JSON.parse(card.dataset.player);
+                e.dataTransfer.setData('text/plain', JSON.stringify(draggedPlayer));
+                card.classList.add('dragging');
+            }
+        }
+        
+        function dragEnd(e) {
+            const card = e.target.closest('.player-neo-card');
+            if (card) card.classList.remove('dragging');
+            draggedPlayer = null;
+            document.querySelectorAll('.slot-neo, .impact-slot-neo').forEach(s => s.classList.remove('drag-over', 'drag-over-impact'));
+        }
+        
+        function initDropTargets() {
+            document.querySelectorAll('.slot-neo').forEach(slot => {
+                slot.addEventListener('dragover', e => { e.preventDefault(); slot.classList.add('drag-over'); });
+                slot.addEventListener('dragleave', () => slot.classList.remove('drag-over'));
+                slot.addEventListener('drop', e => {
+                    e.preventDefault(); slot.classList.remove('drag-over');
+                    const playerData = e.dataTransfer.getData('text/plain');
+                    if (playerData && slot) {
+                        const player = JSON.parse(playerData);
+                        const slotIndex = parseInt(slot.dataset.slot);
+                        addToPlayingXI(player, slotIndex);
+                    }
+                });
+            });
+        }
+        
+        function initImpactDropTargets() {
+            document.querySelectorAll('.impact-slot-neo').forEach(slot => {
+                slot.addEventListener('dragover', e => { e.preventDefault(); slot.classList.add('drag-over-impact'); });
+                slot.addEventListener('dragleave', () => slot.classList.remove('drag-over-impact'));
+                slot.addEventListener('drop', e => {
+                    e.preventDefault(); slot.classList.remove('drag-over-impact');
+                    const playerData = e.dataTransfer.getData('text/plain');
+                    if (playerData && slot) {
+                        const player = JSON.parse(playerData);
+                        addToImpact(player);
+                    }
+                });
+            });
+        }
+        
+        // Touch Support
+        let touchPlayer = null, touchTargetSlot = null, isImpactDrop = false;
+        
+        function touchStart(e) {
+            const card = e.target.closest('.player-neo-card');
+            if (card && card.dataset.player) {
+                e.preventDefault();
+                touchPlayer = JSON.parse(card.dataset.player);
+                card.style.opacity = '0.5';
+            }
+        }
+        
+        function touchMove(e) {
+            if (!touchPlayer) return;
+            e.preventDefault();
+            const touchY = e.touches[0].clientY, touchX = e.touches[0].clientX;
+            const impactRect = document.getElementById('impactGrid').getBoundingClientRect();
+            if (touchY >= impactRect.top && touchY <= impactRect.bottom) {
+                isImpactDrop = true;
+                document.querySelectorAll('.impact-slot-neo').forEach(slot => {
+                    const rect = slot.getBoundingClientRect();
+                    if (touchX >= rect.left && touchX <= rect.right && touchY >= rect.top && touchY <= rect.bottom) {
+                        slot.classList.add('drag-over-impact');
+                        touchTargetSlot = slot;
+                    } else slot.classList.remove('drag-over-impact');
+                });
+                document.querySelectorAll('.slot-neo').forEach(s => s.classList.remove('drag-over'));
+            } else {
+                isImpactDrop = false;
+                document.querySelectorAll('.slot-neo').forEach(slot => {
+                    const rect = slot.getBoundingClientRect();
+                    if (touchY >= rect.top && touchY <= rect.bottom) {
+                        slot.classList.add('drag-over');
+                        touchTargetSlot = slot;
+                    } else slot.classList.remove('drag-over');
+                });
+                document.querySelectorAll('.impact-slot-neo').forEach(s => s.classList.remove('drag-over-impact'));
+            }
+        }
+        
+        function touchEnd(e) {
+            if (!touchPlayer) return;
+            e.preventDefault();
+            document.querySelectorAll('.player-neo-card').forEach(c => c.style.opacity = '');
+            if (touchTargetSlot) {
+                if (isImpactDrop) addToImpact(touchPlayer);
+                else {
+                    const slotIndex = parseInt(touchTargetSlot.dataset.slot);
+                    addToPlayingXI(touchPlayer, slotIndex);
+                }
+            }
+            document.querySelectorAll('.slot-neo, .impact-slot-neo').forEach(s => s.classList.remove('drag-over', 'drag-over-impact'));
+            touchPlayer = null; touchTargetSlot = null; isImpactDrop = false;
+        }
+        
+        function addToPlayingXI(player, slotIndex) {
+            if (playingXI[slotIndex] !== null) { showToast(`Position ${slotIndex + 1} is already filled!`); return false; }
+            const foreignCount = playingXI.filter(p => p && p.country !== "India").length;
+            if (player.country !== "India" && foreignCount >= 4) { showToast(`Maximum 4 foreign players allowed!`); return false; }
+            if (playingXI.some(p => p && p.name === player.name) || impactPlayers.some(p => p.name === player.name)) { showToast(`${player.name} is already in your team!`); return false; }
+            playingXI[slotIndex] = player;
+            updateStats(); renderTeamSlots(); updateCaptainOptions(); renderPlayers(); renderLegends();
+            showToast(`${player.name} added to position ${slotIndex + 1}!`); saveToStorage();
+            return true;
+        }
+        
+        function addToImpact(player) {
+            if (impactPlayers.length >= 5) { showToast(`Impact players limit reached! (5 max)`); return false; }
+            if (playingXI.some(p => p && p.name === player.name) || impactPlayers.some(p => p.name === player.name)) { showToast(`${player.name} is already in your team!`); return false; }
+            impactPlayers.push(player);
+            renderImpactSlots(); updateCaptainOptions(); renderPlayers(); renderLegends();
+            showToast(`${player.name} added as Impact Player!`); saveToStorage();
+            return true;
+        }
+        
+      window.removeFromSlot = function(index) {
+    const removedPlayer = playingXI[index]; // ✅ store player first
+
+    if (captain === removedPlayer?.name) captain = null;
+    if (viceCaptain === removedPlayer?.name) viceCaptain = null;
+
+    playingXI[index] = null; // ✅ then remove
+
+    updateStats();
+    renderTeamSlots();
+    updateCaptainOptions();
+    renderPlayers();
+    renderLegends();
+    saveToStorage();
+    showToast(`Player removed from position ${index + 1}`);
+};
+        
+        window.removeFromImpact = function(name) {
+            impactPlayers = impactPlayers.filter(p => p.name !== name);
+            if (captain === name) captain = null;
+            if (viceCaptain === name) viceCaptain = null;
+            renderImpactSlots(); updateCaptainOptions(); renderPlayers(); renderLegends(); saveToStorage();
+            showToast(`${name} removed from Impact Players`);
+        };
+        
+        function resetTeam() {
+            playingXI = new Array(11).fill(null);
+            impactPlayers = [];
+            captain = null;
+            viceCaptain = null;
+            updateStats(); renderTeamSlots(); renderImpactSlots(); updateCaptainOptions(); renderPlayers(); renderLegends();
+            showToast(`Team reset successfully!`); saveToStorage();
+        }
+        
+        function selectTeam(team) {
+            currentTeam = team;
+            setTheme(team);
+            playingXI = new Array(11).fill(null);
+            impactPlayers = [];
+            captain = null;
+            viceCaptain = null;
+            updateStats(); renderTeamSlots(); renderImpactSlots(); updateCaptainOptions(); renderPlayers(); renderLegends(); renderTeamSelector();
+            gsap.fromTo('.neo-card', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'back.out' });
+            saveToStorage();
+            showToast(`${teamsData[team].name} selected!`);
+        }
+        
+        function saveToStorage() {
+            const data = {
+                team: currentTeam,
+                playingXI: playingXI.map((p, i) => p ? { index: i, player: p } : null).filter(p => p),
+                impactPlayers: impactPlayers,
+                captain: captain,
+                viceCaptain: viceCaptain
+            };
+            localStorage.setItem('bowledbyher_data', JSON.stringify(data));
+        }
+        
+        function loadFromStorage() {
+            const saved = localStorage.getItem('bowledbyher_data');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    if (data.team && teamsData[data.team]) {
+                        currentTeam = data.team;
+                        playingXI = new Array(11).fill(null);
+                        data.playingXI?.forEach(({ index, player }) => { if (index >= 0 && index < 11) playingXI[index] = player; });
+                        impactPlayers = data.impactPlayers || [];
+                        captain = data.captain;
+                        viceCaptain = data.viceCaptain;
+                        setTheme(currentTeam);
+                        updateStats(); renderTeamSlots(); renderImpactSlots(); updateCaptainOptions(); renderPlayers(); renderLegends(); renderTeamSelector();
+                    }
+                } catch(e) { console.log(e); }
+            }
+        }
+        
+      function submitTeam() {
+    if (playingXI.filter(p => p !== null).length !== 11) { 
+        showToast(`Please fill all 11 positions! (${playingXI.filter(p => p !== null).length}/11)`); 
+        return; 
+    }
+    
+    const hasWicketKeeper = playingXI.some(p => p && p.role === "Wicket Keeper");
+    if (!hasWicketKeeper) {
+        showToast("You must select at least 1 Wicket Keeper!");
+        return;
+    }
+    
+    if (!captain) { 
+        showToast(`Please select a Captain!`); 
+        return; 
+    }
+    if (!viceCaptain) { 
+        showToast(`Please select a Vice Captain!`); 
+        return; 
+    }
+    if (captain === viceCaptain) { 
+        showToast(`Captain and Vice Captain can't be the same!`); 
+        return; 
+    }
+    
+    const foreignCount = playingXI.filter(p => p && p.country !== "India").length;
+    if (foreignCount > 4) { 
+        showToast(`Maximum 4 foreign players allowed!`); 
+        return; 
+    }
+    
+    const submitData = { 
+        team: teamsData[currentTeam], 
+        playingXI: playingXI.filter(p => p), 
+        impactPlayers: impactPlayers, 
+        captain: captain, 
+        viceCaptain: viceCaptain 
+    };
+    
+    localStorage.setItem('bowledbyher_submit', JSON.stringify(submitData));
+    
+    showToast(`Team saved! Redirecting...`);
+    
+    setTimeout(() => window.location.href = 'bbh-submit.html', 500);
+}
+        
+        function createParticles() {
+            const container = document.getElementById('neoParticles');
+            for (let i = 0; i < 80; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'neo-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = Math.random() * 12 + 8 + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Event Listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => { searchTerm = e.target.value; renderPlayers(); });
+        document.querySelectorAll('#filterTabs .filter-neo-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#filterTabs .filter-neo-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.cat;
+                renderPlayers();
+            });
+        });
+        document.getElementById('legendsBtn').addEventListener('click', () => document.getElementById('legendsPanel').classList.toggle('show'));
+        document.getElementById('captainSelect').addEventListener('change', (e) => { captain = e.target.value; renderTeamSlots(); saveToStorage(); });
+        document.getElementById('vcSelect').addEventListener('change', (e) => { viceCaptain = e.target.value; renderTeamSlots(); saveToStorage(); });
+        document.getElementById('submitBtn').addEventListener('click', submitTeam);
+        document.getElementById('resetBtn').addEventListener('click', resetTeam);
+        
+        window.selectTeam = selectTeam;
+        createParticles();
+        loadFromStorage();
+        if (!playingXI.some(p => p)) selectTeam('csk');
+        
+        gsap.fromTo('.neo-header, .team-selector-neo', { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'back.out' });
+        
+        const niroarFooter = document.getElementById("niroarFooter");
+const niroarCursor = document.getElementById("niroarCursor");
+
+niroarFooter.addEventListener("mousemove",(e)=>{
+    const rect = niroarFooter.getBoundingClientRect();
+    niroarCursor.style.left = (e.clientX - rect.left)+"px";
+    niroarCursor.style.top = (e.clientY - rect.top)+"px";
+});
+
+// Help Modal Logic
+const helpIcon = document.getElementById('helpIcon');
+const helpModal = document.getElementById('helpModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+
+if (helpIcon) {
+    helpIcon.addEventListener('click', () => {
+        helpModal.classList.add('active');
+    });
+}
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        helpModal.classList.remove('active');
+    });
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === helpModal) {
+        helpModal.classList.remove('active');
+    }
+});
+
+    </script>
+</body>
+</html>
