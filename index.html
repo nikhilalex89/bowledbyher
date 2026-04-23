@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>IPL 2026 Team Builder | BowledByHer | Powered by Niroar Tech</title>
 
     <link rel="icon" type="image/png" sizes="256x256" href="bbhfav.png">
@@ -13,7 +13,7 @@
     
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    
     <meta name="description" content="Free IPL 2026 team builder. Choose from 10 teams, drag players, set captain, add impact players. Download image. No login, no betting.">
     <meta name="keywords" content="IPL 2026 team builder, playing XI creator, CSK, MI, RCB, KKR, SRH, DC, RR, PBKS, LSG, GT, cricket team selector">
     <meta name="author" content="Nikhil Alex | Niroar Tech">
@@ -2010,6 +2010,40 @@ body.gt::before {
         zoom: 0.8;
         -moz-transform: scale(0.8);
         -moz-transform-origin: top center;
+    }
+}
+
+/* MOBILE FIX - ADD THIS AT THE END */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    
+    .team-floating-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .team-neo-card {
+        width: calc(20% - 10px);
+        min-width: 70px;
+    }
+    
+    .team-logo-neo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .team-logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
