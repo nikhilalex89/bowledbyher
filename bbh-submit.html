@@ -1542,27 +1542,32 @@ document.getElementById('downloadShareBtn').onclick = () => {
 
 // SHARE ANYWHERE (Web Share API)
 document.getElementById('nativeShareBtn').onclick = async () => {
-    if(currentImageData) {
-        const blob = await (await fetch(currentImageData)).blob();
-        const file = new File([blob], 'dreamteam.png', { type: 'image/png' });
-        if (navigator.share) {
-            navigator.share({
-               title: 'My IPL 2026 Dream Team',
-text: `Check out my ${teamName} squad! Built with <a href="https://bowledbyher.online/" target="_blank">bowledbyher.online</a>`,
-files: [file]
+    if (currentImageData) {
+        try {
+            const blob = await (await fetch(currentImageData)).blob();
+            const file = new File([blob], 'dreamteam.png', { type: 'image/png' });
 
-            }).catch(err => {
-                if(err.name !== 'AbortError') showToast('❌ Sharing failed', true);
-            });
-        } else {
-            const a = document.createElement('a');
-            a.download = `BowledByHer_${teamShort}_DreamTeam.png`;
-            a.href = currentImageData;
-            a.click();
-            showToast('✅ Image saved. You can now share it anywhere.', false);
+            if (navigator.share) {
+                await navigator.share({
+                    title: 'My IPL 2026 Dream Team',
+                    text: `Check out my ${teamName} squad! Built with bowledbyher.online 👉 https://bowledbyher.online/`,
+                    files: [file]
+                });
+            } else {
+                const a = document.createElement('a');
+                a.download = `BowledByHer_${teamShort}_DreamTeam.png`;
+                a.href = currentImageData;
+                a.click();
+                showToast('✅ Image saved. You can now share it anywhere.', false);
+            }
+        } catch (err) {
+            if (err.name !== 'AbortError') {
+                showToast('❌ Sharing failed', true);
+            }
         }
     }
 };
+
 // close modal remains functional but we keep original handler
             
             const modal = document.getElementById('shareModal');
