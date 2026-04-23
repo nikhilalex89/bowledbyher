@@ -1547,9 +1547,10 @@ document.getElementById('nativeShareBtn').onclick = async () => {
         const file = new File([blob], 'dreamteam.png', { type: 'image/png' });
         if (navigator.share) {
             navigator.share({
-                title: 'My IPL 2026 Dream Team',
-                text: `Check out my ${teamName} squad! Built with BowledByHer.`,
-                files: [file]
+               title: 'My IPL 2026 Dream Team',
+text: `Check out my ${teamName} squad! Built with <a href="https://bowledbyher.online/" target="_blank">bowledbyher.online</a>`,
+files: [file]
+
             }).catch(err => {
                 if(err.name !== 'AbortError') showToast('❌ Sharing failed', true);
             });
