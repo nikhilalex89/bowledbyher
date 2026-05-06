@@ -2021,7 +2021,15 @@ body.gt::before {
         -moz-transform-origin: top center;
     }
 }
-
+/* 80% zoom on phones - GUARANTEED */
+@media (max-width: 768px) { 
+    html { 
+        transform: scale(0.8); 
+        transform-origin: top center; 
+        width: 125%; 
+        overflow-x: hidden; 
+    } 
+}
 /* Responsive */
 
     </style>
